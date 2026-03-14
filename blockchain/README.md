@@ -1,6 +1,6 @@
 # Logos Blockchain (formerly Nomos) — Research Notes
 
-> Last updated: 2026-03-14
+> Last updated: 2026-03-15
 > Sources: [blog.nomos.tech](https://blog.nomos.tech), [github.com/logos-co](https://github.com/logos-co)
 
 ## What is it?
@@ -21,6 +21,7 @@ It's designed for network states, parallel societies, and decentralised applicat
 | `privacy.md` | Blend Network — proposer anonymity |
 | `roadmap.md` | Timeline, milestones, testnet/mainnet targets |
 | `updates/2026-03-14.md` | Research log: 2025 YIR + Nov 2025 monthly |
+| `updates/2026-03-15.md` | Repo migration confirmed, devnet live, full codebase structure |
 
 ## Quick Reference
 
@@ -32,4 +33,5 @@ It's designed for network states, parallel societies, and decentralised applicat
 - **Testnet target:** March 2026 (public)
 - **Mainnet target:** Early 2027
 - **Blog:** https://blog.nomos.tech
-- **GitHub:** https://github.com/logos-co (repos: nomos-node, nomos-specs, nomos-security-tests)
+- **GitHub:** https://github.com/logos-blockchain/logos-blockchain (migrated from logos-co/nomos)
+- **Devnet dashboard:** https://devnet.blockchain.logos.co/web/
