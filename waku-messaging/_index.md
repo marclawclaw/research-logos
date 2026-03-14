@@ -2,7 +2,7 @@
 topic: waku-messaging
 type: index
 tags: [waku, logos-messaging, p2p, privacy, messaging]
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 ---
 
 # Waku / Logos Messaging — Research Index
@@ -19,6 +19,8 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 |------|-------------|
 | [[waku-overview]] | Core overview — what Waku is, key properties, Logos positioning |
 | [[waku-protocols]] | Full protocol suite: Relay, RLN Relay, Filter, Store, LightPush, WakuMessage format |
+| [[waku-content-topics]] | Content topics — format, k-anonymity patterns, privacy trade-offs |
+| [[waku-spec-10]] | 10/WAKU2 formal spec — libp2p IDs, network domains, sub-specs |
 | [[waku-rln-spam-protection]] | Rate-Limiting Nullifier — ZK-based spam prevention and economic rate limiting |
 | [[waku-service-incentivisation]] | LightPush incentivisation PoC — toward a Waku Service Marketplace |
 | [[waku-use-cases]] | Real-world integrations: Safe Harbour, The Graph, Railgun, Status |

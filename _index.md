@@ -30,6 +30,8 @@ Knowledge database for the Logos technology stack — a unified ecosystem for de
 |------|-------------|
 | [[waku-messaging/waku-overview\|Waku Overview]] | Core overview — properties, Logos positioning |
 | [[waku-messaging/waku-protocols\|Waku Protocol Suite]] | Full protocol suite with trade-offs |
+| [[waku-messaging/waku-content-topics\|Content Topics]] | Format, k-anonymity patterns, privacy trade-offs |
+| [[waku-messaging/waku-spec-10\|10/WAKU2 Spec]] | Formal spec — libp2p IDs, network domains, RFC index |
 | [[waku-messaging/waku-rln-spam-protection\|RLN Spam Protection]] | ZK-based rate limiting and spam prevention |
 | [[waku-messaging/waku-service-incentivisation\|Service Incentivisation]] | LightPush PoC → Service Marketplace roadmap |
 | [[waku-messaging/waku-use-cases\|Use Cases & Integrations]] | Safe Harbour, The Graph, Railgun, Status |
@@ -52,4 +54,4 @@ Knowledge database for the Logos technology stack — a unified ecosystem for de
 - Use cases and integrations
 
 ---
-*Last updated: 2026-03-14 — added waku-messaging/ deep research directory*
+*Last updated: 2026-03-15 — added waku-content-topics and waku-spec-10 atomic notes*
