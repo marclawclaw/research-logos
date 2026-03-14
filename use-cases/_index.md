@@ -3,7 +3,7 @@ topic: use-cases
 type: summary
 tags: [applications, integrations, case-studies, index]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://blog.waku.org
   - https://blog.codex.storage
@@ -13,6 +13,9 @@ sources:
 # Use Cases Research
 
 Applications and projects building on the [[Logos Overview|Logos]] stack.
+
+> [!note] Branding update (Nov 2025)
+> **Waku has been renamed to Logos Messaging** as part of the Logos stack unification. Codex, Nomos, and Waku are now unified under the Logos identity. Waku docs, SDKs, and community channels continue under the waku.org domain for now, but expect progressive migration.
 
 ## Production Integrations
 
@@ -27,9 +30,13 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 - **Guru** — feedback exchange platform (Codex + Waku + Status Network)
 - **Qubetics** — AI product stack (Codex integration)
 - **Ethos** — web crawler for digital rights orgs (on Codex)
+- **OpChan** — anonymous engagement app on Waku (in active development, dogfooding planned)
 - [[Qaku Integration]] — decentralised Q&A boards (Waku + Codex)
 - [[WhisperBox Integration]] — privacy-preserving forms (Waku, hackathon MVP)
 - [[Waku Hackathon Projects]] — Waku Sign, Waku Phone, Waku Remote, WNS (Oct 2025 hackathon)
+- [[Cyphershare]] — encrypted file sharing app (Waku + Codex + TACo, live PoC)
+- [[FileHog]] — personal folder backup to Codex (PoC CLI tool)
+- [[Codex BitTorrent Integration]] — BitTorrent compatibility layer on Codex (testnet PoC)
 
 ## Use Case Thematic Research
 
@@ -54,6 +61,9 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 | Voting | Off-chain voting with on-chain settlement |
 | Gaming | P2P game mechanics |
 | L2 Coordination | Mempool coordination |
+| Personal Backup | FileHog (folder-to-Codex) |
+| Legacy P2P Bridge | Codex × BitTorrent |
+| Encrypted File Sharing | Cyphershare (Waku + Codex + TACo) |
 
 ## Ideas & Inspiration
 
