@@ -1,7 +1,9 @@
 # Cryptarchia Consensus — Research Notes
 
-> Last updated: 2026-03-14
+> Last updated: 2026-03-14 (re-verified)
 > Sources: [Nomos Blog](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/), [logos-blockchain-specs](https://github.com/logos-blockchain/logos-blockchain-specs/tree/master/cryptarchia), [consensus-research](https://github.com/logos-co/consensus-research)
+
+> **Note on `consensus-research`**: This repo (Rust, min v1.63) focuses on **Snowball and Claro** (avalanche-style DAG consensus protocols), NOT Cryptarchia. It contains `consensus/snowball`, `consensus/claro`, and `prototypes/snow-family` simulation apps. Cryptarchia's reference implementation lives in `logos-blockchain-specs` (Python). The two consensus tracks are separate.
 
 ---
 
