@@ -1,7 +1,7 @@
 # Cryptarchia Consensus — Research Notes
 
-> Last updated: 2026-03-14 (re-verified)
-> Sources: [Nomos Blog](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/), [logos-blockchain-specs](https://github.com/logos-blockchain/logos-blockchain-specs/tree/master/cryptarchia), [consensus-research](https://github.com/logos-co/consensus-research)
+> Last updated: 2026-03-14 (algorithm update — stake inference v2)
+> Sources: [Nomos Blog (Cryptarchia intro)](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/), [Lottery Difficulty deep-dive (Sep 2025)](https://blog.nomos.tech/lottery-difficulty-in-private-pos-the-case-of-cryptarchia/), [logos-blockchain-specs](https://github.com/logos-blockchain/logos-blockchain-specs/tree/master/cryptarchia), [consensus-research](https://github.com/logos-co/consensus-research)
 
 > **Note on `consensus-research`**: This repo (Rust, min v1.63) focuses on **Snowball and Claro** (avalanche-style DAG consensus protocols), NOT Cryptarchia. It contains `consensus/snowball`, `consensus/claro`, and `prototypes/snow-family` simulation apps. Cryptarchia's reference implementation lives in `logos-blockchain-specs` (Python). The two consensus tracks are separate.
 
@@ -148,21 +148,35 @@ The ZK proof submitted with each new block proves:
 
 ## Estimating Total Stake
 
-Crypsinous left this problem unsolved. Cryptarchia's formula:
+Crypsinous left this problem unsolved. Cryptarchia's total stake inference algorithm (v2, updated Sep 2025):
 
 ```
-D^{ep+1} = D^ep - β * (D^ep / log(1/(1-f))) * (log(1/(1-f)) - N/T)
+D_{ep+1} = D_{ep} - h * D_{ep} * [f - B^honest_ep / T]
 ```
 
 Where:
-- `D^ep` = current total stake estimate
-- `N/T` = observed blocks per slot (N blocks over T slots, T = first 3/5 of epoch)
-- `log(1/(1-f))` = target blocks per slot when all stake held by one party
-- `β = 0.8` = learning rate coefficient
+- `D_{ep}` = current total stake estimate
+- `f` = target slot occupancy rate (1/30 of slots should be occupied)
+- `B^honest_ep / T` = observed honest chain growth rate: honest blocks over observation window T
+- `h` = learning rate coefficient (controls stability vs responsiveness)
 
-**Convergence**: formula reaches equilibrium ~2 epochs after a 50% stake change.
+> ⚠️ **Algorithm update**: The original formula used *all valid blocks* (including forks). A protocol change made fork blocks invisible to all participants, requiring the redesign to use only honest chain growth rate.
 
-**Relative stake** = note value `v` / `D^{ep+1}`
+**Why honest chain only?** A protocol change in Cryptarchia made blocks not on the honest chain invisible to participants — so the inference had to switch from "all valid blocks" to "honest chain growth rate."
+
+**Bias tradeoff**: Using honest chain rate introduces a predictable bias. At equilibrium, the estimate converges to:
+```
+(log(1-f) / log(1-f/q)) * D_true
+```
+where `q` = proportion of occupied slots on the honest chain. With Blend Network delays, the algorithm underestimates true stake by ~15% — an accepted tradeoff.
+
+**Convergence**: Exponential decay toward equilibrium — reaches near-true values in a few epochs.
+
+**Precision**: Variance at equilibrium increases with honest slot utilisation rate (higher q → more variance, but this is acceptable).
+
+**Relative stake** = note value `v` / `D_{ep+1}`
+
+**DarkFi comparison**: DarkFi tried a PID controller approach — but this undermines consensus security by removing the stable block rate that Cryptarchia's security proofs depend on.
 
 ---
 
@@ -235,7 +249,8 @@ Relevant research:
 | Resource | URL |
 |----------|-----|
 | Python reference spec | [logos-blockchain/logos-blockchain-specs/cryptarchia/](https://github.com/logos-blockchain/logos-blockchain-specs/tree/master/cryptarchia) |
-| Blog post | [blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/) |
+| Blog post: Cryptarchia intro (May 2025) | [blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/) |
+| Blog post: Lottery Difficulty / Stake Inference (Sep 2025) | [blog.nomos.tech/lottery-difficulty-in-private-pos-the-case-of-cryptarchia/](https://blog.nomos.tech/lottery-difficulty-in-private-pos-the-case-of-cryptarchia/) |
 | Crypsinous paper | [eprint.iacr.org/2018/1132](https://eprint.iacr.org/2018/1132.pdf) |
 | Consensus research (Snow/Claro) | [github.com/logos-co/consensus-research](https://github.com/logos-co/consensus-research) |
 
