@@ -13,6 +13,7 @@ This directory contains research notes on the developer experience (DX) across t
 | `logos-docs-analysis.md` | logos-co/logos-docs repo analysis — unified stack docs |
 | `ideas-and-use-cases.md` | ideas.waku.org — community ideas, inspiration for PoCs |
 | `dx-pain-points.md` | Consolidated DX pain points and improvement opportunities |
+| `devex-status-2026-03-14.md` | Link health check + delta snapshot from March 14 verification run |
 
 ## Quick Summary
 
