@@ -3,13 +3,14 @@ title: "Codex — Use Cases & Integrations"
 tags: [codex, logos, storage, use-cases, integrations, waku, bittorrent, AI, dapps]
 sources:
   - https://blog.codex.storage/codex-august-updates-2/
+  - https://blog.codex.storage/codex-july-updates/
   - https://blog.codex.storage/leveraging-taco-for-decentralised-access-control-on-codex/
   - https://blog.codex.storage/bridging-protocols-integrating-codex-with-bittorrent/
   - https://blog.codex.storage/deploying-a-codex-node-on-akash-network/
   - https://blog.codex.storage/building-a-censorship-resistant-file-sharing-app-with-codex-and-waku/
   - https://blog.codex.storage/exploring-filehog-decentralised-personal-storage-with-codex/
 created: 2026-03-14
-updated: 2026-03-14
+updated: 2026-03-15
 status: current
 ---
 
@@ -37,6 +38,12 @@ status: current
 ### 5. Decentralised Identities
 - Codex identified as key infrastructure for decentralised identity storage
 - Data stored with no single controlling entity
+
+### 6. Connected Vehicles
+- Modern connected vehicles generate **massive, continuous data streams**
+- Distributed storage networks like Codex offer better durability at lower per-GB cost
+- Vehicle owners can maintain **data sovereignty** via open-access or permissioned storage
+- Strong fit: immutable provenance + censorship resistance for fleet/telematics data
 
 ## Integrations
 
@@ -66,9 +73,24 @@ status: current
 
 ## Developer Tools
 
+### Third Storage (Decentralised Pinning Service)
+- AI-enabled decentralised pinning service built on top of the Codex protocol
+- Built by Codex/Logos DevRel Guru; **public alpha**, fully open-source
+- Runs on the Codex Non-Incentivised Testnet + Logos tech stack
+- Features: file upload/download dashboard, RESTful API, Codex Gateway (resolves CIDs for any file on the network)
+- Announced: July 2025
+
+### Constellations Protocol / Codex Desktop App
+- "Constellations" is an early protocol concept for desktop-level Codex interaction
+- Basis for the **Codex Desktop App** — surfaced in July 2025 Learn-Up session
+- Goal: make running and using a Codex node accessible to non-technical users
+- Part of the broader UX/developer-experience push alongside CLI Installer and Codex Factory
+
 ### Codex Factory
 - CLI tool for spinning up local Codex clusters for development/testing
 - Built by Adam Uhlíř (Codex team)
+- Uses Docker; fully isolated from testnet/internet — predictable, repeatable environment
+- Open-source; easily extensible
 - Simplifies dev environment setup without needing testnet
 
 ### FileHog
