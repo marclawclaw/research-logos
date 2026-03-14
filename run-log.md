@@ -1,0 +1,42 @@
+# Research Run Log
+
+Auto-maintained by Phase 2 researcher agents and Phase 3 watchdog.
+Format: `## [YYYY-MM-DD HH:MM UTC] [TOPIC] — [status: ok | paused | failed]`
+
+---
+
+## [2026-03-14 02:32 UTC] cryptarchia — ok (delivery-error)
+- Notes written: 1 (`cryptarchia/README.md`, 261 lines)
+- Sources crawled: blog.nomos.tech (Cryptarchia vs Ouroboros Crypsinous), logos-blockchain-specs
+- Commit: cd28918 pushed to marclawclaw/research-logos
+- Reason: Research completed successfully. Delivery failed (channel config bug — fixed by watchdog)
+
+## [2026-03-14 02:45 UTC] vac-research — ok (delivery-error)
+- Notes written: 7 files, 560 lines (overview, service-units, nim-libp2p, specs-lip, principles, analysis, README)
+- Sources crawled: research.logos.co, lip.logos.co, github.com/vacp2p/nim-libp2p
+- Commit: pushed to marclawclaw/research-logos
+- Reason: Research completed successfully. Delivery failed (channel config bug — fixed by watchdog)
+
+## [2026-03-14 03:00 UTC] devex — ok (delivery-error)
+- Notes written: 5 files (Waku docs 404 audit, logos-docs, ideas.waku.org analysis)
+- Sources crawled: docs.waku.org, github.com/logos-co/logos-docs, ideas.waku.org
+- Commit: pushed to marclawclaw/research-logos
+- Key finding: Waku docs 404 epidemic on /guides/ routes still present; js-waku is main web entry point
+- Reason: Research completed successfully. Delivery failed (channel config bug — fixed by watchdog)
+
+## [2026-03-14 03:30 UTC] devex — ok (delivery-error) [re-run]
+- Notes written: devex-status-2026-03-14.md (link health table, delta from prior)
+- Sources crawled: docs.waku.org, logos-co/logos-docs, ideas.waku.org
+- Commit: pushed to marclawclaw/research-logos
+- Reason: Duplicate run (scheduler re-queued). Research completed, delivery failed (same channel config bug)
+
+---
+
+## [2026-03-14 04:15 UTC] WATCHDOG — cycle summary
+- Cycle: 2026-03-14 00:00–04:15 UTC
+- Topics that ran: cryptarchia ✅, vac ✅, devex ✅ (x2)
+- Topics pending first run: use-cases, zk, tech-stack, waku-messaging, codex-storage, blockchain, blend-network (created after 02:00 UTC, first slot 06:00–07:30 UTC)
+- Budget pauses: 0
+- True errors: 0 (all failures were delivery channel config — `channel: "last"` broken in isolated sessions with multiple channels)
+- Fix applied: delivery.channel set to "telegram" on all 10 research crons
+- Rescheduled: 0 (research completed successfully, no need to re-run)
