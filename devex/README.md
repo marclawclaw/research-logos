@@ -1,6 +1,6 @@
 # Logos Developer Experience Research
 
-> Last updated: 2026-03-14  
+> Last updated: 2026-03-15
 > Sources: docs.waku.org, github.com/logos-co/logos-docs, ideas.waku.org
 
 This directory contains research notes on the developer experience (DX) across the Logos stack.
@@ -14,7 +14,10 @@ This directory contains research notes on the developer experience (DX) across t
 | `ideas-and-use-cases.md` | ideas.waku.org — community ideas, inspiration for PoCs |
 | `dx-pain-points.md` | Consolidated DX pain points and improvement opportunities |
 | `devex-status-2026-03-14.md` | Link health check + delta snapshot from March 14 verification run |
+| `devex-status-2026-03-15.md` | URL restructure findings + new JS SDK guides discovered (March 15) |
 
 ## Quick Summary
 
 The Logos ecosystem is undergoing a major rebranding (Nomos/Codex/Waku → unified Logos stack). Documentation is actively consolidating, which creates friction but also signals a more developer-friendly future. **Waku messaging** has the most mature DX today; the broader Logos stack DX is in early stages.
+
+**March 15 update:** docs.waku.org has restructured its URL layout — `/build/javascript/` now hosts 10 JS SDK guides (replacing broken `/guides/`), and `/learn/` section is now accessible. `@waku/create-app` scaffolding tool provides a quick-start path.

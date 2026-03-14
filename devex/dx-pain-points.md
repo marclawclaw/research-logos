@@ -1,6 +1,6 @@
 # Logos DX Pain Points & Improvement Opportunities
 
-> Last updated: 2026-03-14  
+> Last updated: 2026-03-15
 > Synthesized from: docs.waku.org, logos-co/logos-docs, ideas.waku.org
 
 ## Summary
@@ -11,18 +11,19 @@ The Logos stack is technically functional as of March 2026 (Testnet v0.1 live). 
 
 ## Critical Pain Points
 
-### 1. Broken Documentation Links
-**Severity: High**
+### 1. Broken Documentation Links (Partially Resolved)
+**Severity: Medium** *(downgraded from High on 2026-03-15)*
 
-Multiple `docs.waku.org` sub-pages return 404:
-- `/guides/` → 404
-- `/learn/concepts/` → 404
-- `/learn/concepts/sdk` → 404
-- `/learn/waku-network` → 404
+**Update 2026-03-15:** docs.waku.org has restructured its URL layout. Most content is now accessible:
+- `/build/javascript/` → ✅ replaces old `/guides/` (10 guides now available)
+- `/run-node/` → ✅ replaces old `/guides/nwaku/run-node`
+- `/learn/` → ✅ now loads (previously 404)
 
-The homepage works, but navigating deeper breaks. Developers who share or bookmark specific URLs hit dead ends. This is the #1 discoverability issue.
+**Still broken:**
+- Old `/guides/*` URLs → 404 (no redirects to new paths)
+- Direct links shared before March 2026 still fail
 
-**Opportunity:** Open issues on waku-org/docs repo for each broken URL. Simple redirect fixes or content migration would resolve these.
+**Opportunity:** Set up 301 redirects from old `/guides/` paths to new `/build/javascript/` equivalents. The content exists — it's a routing/redirect issue now, not missing content.
 
 ---
 
@@ -53,15 +54,17 @@ This is Ethereum-native developer knowledge. For web developers building on Waku
 
 ---
 
-### 4. No Unified Quick-Start
-**Severity: Medium**
+### 4. Quick-Start Path (Improved but Still Fragmented)
+**Severity: Low-Medium** *(downgraded from Medium on 2026-03-15)*
 
-There's no accessible 5-minute "hello world" path that works today:
-- `docs.waku.org/guides/` is 404
-- `logos-co/logos-docs` points to Nix build for the full app (heavy)
-- `js-waku` quick starts are buried in GitHub
+**Update 2026-03-15:** A quick-start path now exists via `@waku/create-app` (project scaffolding CLI) documented at `docs.waku.org/build/javascript/`. This is a significant improvement.
 
-**Opportunity:** A single working CodeSandbox/StackBlitz example for js-waku would convert curious developers into active users.
+**Remaining issues:**
+- `logos-co/logos-docs` still points to Nix build for the full Logos App (heavy)
+- The Waku quick-start and Logos quick-start are separate experiences
+- `@waku/create-app` needs end-to-end testing to confirm it works smoothly
+
+**Opportunity:** Link `@waku/create-app` from the logos-co/logos-docs README as the recommended messaging quick-start. A CodeSandbox/StackBlitz demo would still add value.
 
 ---
 

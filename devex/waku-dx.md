@@ -1,7 +1,7 @@
 # Waku Developer Experience
 
-> Source: https://docs.waku.org  
-> Researched: 2026-03-14
+> Source: https://docs.waku.org
+> Researched: 2026-03-15 (updated from 2026-03-14)
 
 ## What Is Waku?
 
@@ -58,6 +58,11 @@ This is a non-trivial setup for web developers unfamiliar with Ethereum tooling.
 - Supports LightPush, Filter, Store, Relay
 - Actively maintained; npm package `@waku/sdk`
 - Integration pattern: LightPush to publish → Filter to subscribe → Store for history
+- **`@waku/create-app`** — project scaffolding CLI for bootstrapping new projects
+- **`@waku/react`** — React integration package for seamless component binding
+- **`@waku/message-encryption`** — encryption package for secure messaging
+- **React Native:** not currently supported, planned for future
+- **10 guides available** at `docs.waku.org/build/javascript/` covering: Reliable Channels, Light Push & Filter, Store Protocol, Message Encryption, React Integration, Project Scaffolding, Node Discovery, NodeJS Usage, Debugging, Filter Management
 
 ### nwaku (Nim)
 - Reference/full node implementation
@@ -90,16 +95,19 @@ Web App → js-waku (LightPush) → Waku Network relay →
 - `/learn/concepts/protocols` — solid protocol explanations with trade-off notes
 - Case studies: The Graph, Railgun
 
-### Broken/missing (March 2026)
-- `/guides/` → 404
-- `/learn/concepts/` (index) → 404
-- `/learn/concepts/sdk` → 404
-- `/learn/waku-network` → 404
+### URL Restructure (Updated March 15, 2026)
 
-> **Issue**: Multiple sub-pages return 404. Navigation from the sidebar likely works but direct URL access fails. This is a critical DX issue for developers who share links or bookmark pages.
+**Resolved:** The site has been reorganised with three clear sections:
+- `/build/javascript/` — JS SDK guides (10 guides, replaces old `/guides/`)
+- `/run-node/` — Node operator setup (Docker Compose recommended)
+- `/learn/` — Concepts, protocols, FAQ, glossary (now loads correctly)
+
+**Still broken:** Old `/guides/*` URLs return 404 with no redirects to new paths.
+
+> **Note**: A Docusaurus baseUrl configuration banner was observed on the homepage, suggesting possible ongoing deployment work.
 
 ### Getting Started UX
-No working quick-start guide accessible via direct URL. Developers are pointed to GitHub tutorials for RLN setup.
+`@waku/create-app` scaffolding tool now provides a quick-start path. Installation: `npm install @waku/sdk` with protobufjs dependency. CDN access also available.
 
 ## Use Cases (from docs)
 
@@ -124,8 +132,8 @@ No working quick-start guide accessible via direct URL. Developers are pointed t
 
 ## DX Weaknesses
 
-- Broken documentation links (404s on sub-pages)
-- RLN on-chain requirement adds setup friction
-- No accessible quick-start guide via direct URL
+- Old documentation URLs still 404 (no redirects from `/guides/` → `/build/javascript/`)
+- RLN on-chain requirement adds setup friction (now Linea Sepolia, not just Sepolia)
+- React Native not yet supported
 - Sepolia ETH requirement may confuse web2 developers
 - Terminology shift (js-waku → "Logos Delivery Module") creates confusion
