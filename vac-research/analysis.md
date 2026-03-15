@@ -1,6 +1,6 @@
 # Vac Research — Analysis & Observations
 
-> Last updated: 2026-03-14
+> Last updated: 2026-03-15
 
 ## TL;DR
 
@@ -93,3 +93,4 @@ Vac Foundational
 - [ ] Monitor: nim-libp2p QUIC transport PR (2025 goal)
 - [ ] Check: lip.logos.co for any new Waku or Codex specs relevant to active PoCs
 - [ ] Forum: [forum.vac.dev](https://forum.vac.dev/) for R&D discussions
+- [x] Verified sources 2026-03-15 — content matches original research

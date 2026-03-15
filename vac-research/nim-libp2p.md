@@ -1,7 +1,8 @@
 # nim-libp2p
 
-> Last updated: 2026-03-14  
+> Last updated: 2026-03-15  
 > Source: [github.com/vacp2p/nim-libp2p](https://github.com/vacp2p/nim-libp2p)
+> Note: repo is canonical at vacp2p/nim-libp2p (historical references to status-im/nim-libp2p redirect here)
 
 ## Overview
 
@@ -29,6 +30,8 @@ nimble install libp2p
 - **Nimbus** — Ethereum consensus client
 - **logos-delivery** — Decentralized messaging protocols (Waku stack)
 - **logos-storage** — Decentralized storage protocols (Codex stack)
+
+> Note: logos-delivery and logos-storage are distinct projects from nim-libp2p itself; nim-libp2p is a dependency they build on, not a part of them.
 
 ## Architecture
 

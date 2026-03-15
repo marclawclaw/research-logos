@@ -1,6 +1,6 @@
 # Vac Research — Notes Index
 
-> Researched: 2026-03-15  
+> Last updated: 2026-03-15 (re-verified sources)
 > Sources: [research.logos.co](https://research.logos.co/), [lip.logos.co](https://lip.logos.co/), [github.com/vacp2p/nim-libp2p](https://github.com/vacp2p/nim-libp2p)
 
 ## Files
