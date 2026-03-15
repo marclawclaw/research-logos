@@ -4,7 +4,7 @@ subtopic: blend-network
 type: deep-dive
 tags: [blend, proposer-anonymity, stake-privacy, unlinkability, cover-traffic, nomos, privacy]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://blog.nomos.tech/the-blend-network-improving-nomos-privacy-guarantees/
   - https://blog.nomos.tech/stirring-mixing-blending-different-approaches-to-proposer-anonymity/

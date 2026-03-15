@@ -4,7 +4,7 @@ subtopic: blend-network
 type: index
 tags: [blend, anonymity, mixnet, privacy, proposer, nomos]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://blog.nomos.tech/the-blend-network-improving-nomos-privacy-guarantees/
   - https://blog.nomos.tech/message-encapsulation-in-the-nomos-blend-network/

@@ -4,7 +4,7 @@ subtopic: blend-network
 type: deep-dive
 tags: [blend, encapsulation, encryption, mixnet, cryptography, zk-proofs, nomos]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://blog.nomos.tech/message-encapsulation-in-the-nomos-blend-network/
 ---
@@ -165,7 +165,7 @@ Every node that receives a Blend message **attempts decapsulation**. Most fail (
 4. **Decrypt payload** with κ_i.
 5. **Reconstruct dummy header**: use the same PRF (seeded with κ_i) as during encapsulation to regenerate the innermost dummy.
 6. **Shift private headers up**: truncate outermost header, fill deepest with reconstructed dummy.
-7. **Verify signature**: generate signature over new payload + headers. If it doesn't match the signature in the new public header, discard.
+7. **Verify signature**: generate a signature over the new payload and private headers using the public key from the new public header. If this signature does not match the signature embedded in the new public header, the message is discarded — this prevents tampered or malformed messages from propagating further through the path.
 
 After decapsulation, the node **randomly delays** and re-disseminates the resulting message (one layer thinner) to all its peers.
 
