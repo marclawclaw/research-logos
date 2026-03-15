@@ -2,7 +2,7 @@
 title: "Codex Decentralised Storage — Research Index"
 tags: [codex, logos, storage, index]
 created: 2026-03-14
-updated: 2026-03-14
+updated: 2026-03-15
 ---
 
 # Codex Decentralised Storage — Research Index

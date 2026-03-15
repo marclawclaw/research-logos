@@ -3,10 +3,11 @@ title: "Codex Implementation — logos-storage-nim (nim-codex)"
 tags: [codex, logos, storage, nim, implementation, API, bindings, developer]
 sources:
   - https://github.com/codex-storage/nim-codex
+  - https://metrics.testnet.codex.storage
   - https://github.com/logos-storage/logos-storage-nim
   - https://api.codex.storage
 created: 2026-03-14
-updated: 2026-03-14
+updated: 2026-03-15
 status: current
 ---
 
@@ -92,6 +93,12 @@ make STATIC=1 libstorage
 
 - v0.2.0 — introduced Codex CLI Installer (Q1 2025)
 - Tags: `github.com/codex-storage/nim-codex/releases`
+
+## Testnet Monitoring
+
+- **Metrics Dashboard:** `metrics.testnet.codex.storage` — live view of active nodes, software versions
+- Data collected from nodes running via Codex CLI (requires privacy disclaimer consent)
+- Useful for tracking testnet health and identifying onboarding issues
 
 ## CI/CD
 
