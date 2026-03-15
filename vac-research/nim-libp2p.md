@@ -1,8 +1,8 @@
 # nim-libp2p
 
-> Last updated: 2026-03-15  
+> Last updated: 2026-03-16  
 > Source: [github.com/vacp2p/nim-libp2p](https://github.com/vacp2p/nim-libp2p)
-> Note: repo is canonical at vacp2p/nim-libp2p (historical references to status-im/nim-libp2p redirect here)
+> Note: repo is canonical at vacp2p/nim-libp2p. Some Vac documentation still references the old status-im/nim-libp2p URL but it redirects. Community Discord: https://discord.com/channels/1204447718093750272/1351621032263417946
 
 ## Overview
 

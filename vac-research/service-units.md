@@ -1,6 +1,6 @@
 # Vac R&D Service Units (VSUs)
 
-> Last updated: 2026-03-15  
+> Last updated: 2026-03-16  
 > Source: [research.logos.co/vsus](https://research.logos.co/vsus)
 
 Vac operates **9 specialized R&D service units**. Each unit supports IFT projects and contributes to the broader decentralized ecosystem.
@@ -11,11 +11,12 @@ Vac operates **9 specialized R&D service units**. Each unit supports IFT project
 
 **Focus:** P2P networking layer
 
-- Develops and maintains **[nim-libp2p](https://github.com/vacp2p/nim-libp2p)** — the Nim implementation of the libp2p networking stack
+- Develops and maintains **[nim-libp2p](https://github.com/vacp2p/nim-libp2p)** — the Nim implementation of the libp2p networking stack (note: some Vac docs still link old status-im/nim-libp2p URL; both resolve to the same repo)
 - Improves libp2p protocols with emphasis on **GossipSub** optimization
 - Prioritizes requests from IFT projects (Waku, Nimbus, etc.)
 - Published performance evaluations of IDONTWANT messaging
 - Contributes specification improvements back to the libp2p community
+- Community Discord channel active: https://discord.com/channels/1204447718093750272/1351621032263417946
 
 **2025 Goals:**
 - Add QUIC transport to nim-libp2p

@@ -1,6 +1,6 @@
 # Logos LIP — Specs & RFC Index
 
-> Last updated: 2026-03-15  
+> Last updated: 2026-03-16  
 > Source: [lip.logos.co](https://lip.logos.co/) | Repo: [vacp2p/rfc-index](https://github.com/vacp2p/rfc-index)
 
 ## What is the LIP Index?
