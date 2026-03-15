@@ -3,7 +3,7 @@ topic: use-cases
 type: case-study
 tags: [waku, logos, hackathon, privacy, railgun, tor, activist-tech, 2025]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://blog.waku.org/waku-monthly-update-october-2025/
   - https://blog.waku.org/waku-monthly-update-september-2025/
@@ -35,6 +35,13 @@ Advancing Tor-compatible systems that strengthen privacy online.
 **Stack:** Tor / Nym + Ethereum wallet  
 **What it does:** An Ethereum wallet that routes RPC calls through Tor/Nym to protect users from RPC tracking and metadata leaks  
 **Relevance:** Addresses a real privacy gap — most Ethereum wallets leak IP addresses and browsing patterns to RPC providers
+
+### 🥇 CommuniFi (Resilient Activist Technology Track)
+**Details:** Not yet fully documented — confirmed as a RealFi Hackathon winner (Resilient Activist Technology track) by the November 2025 Logos Messaging update.  
+**Demo video:** https://www.youtube.com/watch?v=OdqmCcbqlwk (Logos Dev Club recording)  
+**Relevance:** Activist communications tooling, likely building on Logos/Waku stack
+
+> [!todo] Needs further research into what CommuniFi built
 
 ## Significance
 

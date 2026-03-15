@@ -3,7 +3,7 @@ topic: use-cases
 type: summary
 tags: [applications, integrations, case-studies, index]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://blog.waku.org
   - https://blog.codex.storage
@@ -17,6 +17,9 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 > [!note] Branding update (Nov 2025)
 > **Waku has been renamed to Logos Messaging** as part of the Logos stack unification. Codex, Nomos, and Waku are now unified under the Logos identity. Waku docs, SDKs, and community channels continue under the waku.org domain for now, but expect progressive migration.
 
+> [!note] Codex testnet status (Aug 2025)
+> **The Codex public testnet was paused in August 2025** for architectural rework — revisiting core design for better usability, resilience, and real-world alignment. A new testnet is in development. Active integrations (Qubetics, Guru, etc.) were confirmed before the pause.
+
 ## Production Integrations
 
 - [[The Graph Integration]] — decentralised indexer communication
@@ -27,15 +30,15 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 
 ## PoC / In Development
 
-- **Guru** — feedback exchange platform (Codex + Waku + Status Network)
-- **Qubetics** — AI product stack (Codex integration)
+- [[Guru Platform]] — feedback exchange platform (Codex + Waku + Status Network L2)
+- [[Qubetics Integration]] — AI product stack (QubeQobe SLM libraries on Codex, Aug 2025)
 - **Ethos** — web crawler for digital rights orgs (on Codex)
 - **OpChan** — anonymous engagement app on Waku (AI app-generation feature added Oct 2025)
 - **SCALA** — secure calendar app for privacy-preserving scheduling (Waku, design stage)
 - [[Qaku Integration]] — decentralised Q&A boards (Waku + Codex, desktop app launched Oct 2025)
 - [[WhisperBox Integration]] — privacy-preserving forms (Waku, hackathon MVP)
 - [[Waku Hackathon Projects]] — Waku Sign, Waku Phone, Waku Remote, WNS, SCALA
-- [[RealFi Hackathon 2025]] — Shielded Micropay (Railgun), Tohaku (Tor wallet)
+- [[RealFi Hackathon 2025]] — Shielded Micropay (Railgun), Tohaku (Tor wallet), CommuniFi (activist tech)
 - [[Cyphershare]] — encrypted file sharing app (Waku + Codex + TACo, live PoC)
 - [[FileHog]] — personal folder backup to Codex (PoC CLI tool)
 - [[Codex BitTorrent Integration]] — BitTorrent compatibility layer on Codex (testnet PoC)
