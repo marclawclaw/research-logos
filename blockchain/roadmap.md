@@ -1,6 +1,6 @@
 # Logos Blockchain — Roadmap & Milestones
 
-> Last updated: 2026-03-14
+> Last updated: 2026-03-16
 > Source: blog.nomos.tech/2025-year-in-review
 
 ## 2025 — Completed Milestones
@@ -26,7 +26,8 @@
 
 | Target | Milestone |
 |--------|-----------|
-| **March 2026** | **First public testnet** — working prototype of full Logos stack; community stress-testing |
+| **Feb 2026** | **Devnet launched internally**; v0.2.0 + v0.2.1 shipped publicly March 3 |
+| **March 2026** | **First public testnet** — no blog announcement yet as of 2026-03-16; devnet v0.2.1 is publicly joinable |
 | **June 2026** | **Second testnet** — fixes from first testnet; improved network resilience |
 | Q4 2026 | Final mainnet preparation |
 | **Early 2027** | **Mainnet launch** |

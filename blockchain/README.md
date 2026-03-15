@@ -1,6 +1,6 @@
 # Logos Blockchain (formerly Nomos) — Research Notes
 
-> Last updated: 2026-03-15
+> Last updated: 2026-03-16
 > Sources: [blog.nomos.tech](https://blog.nomos.tech), [github.com/logos-co](https://github.com/logos-co)
 
 ## What is it?
@@ -30,8 +30,10 @@ It's designed for network states, parallel societies, and decentralised applicat
 - **Execution:** Mantle → Sovereign Zones → LSSA
 - **Privacy:** Blend Network (mix-net for proposer anonymity)
 - **Block time:** 30 seconds
-- **Testnet target:** March 2026 (public)
+- **Testnet target:** March 2026 (imminent — no blog announcement yet as of 2026-03-16)
 - **Mainnet target:** Early 2027
+- **Latest release:** v0.2.1 (March 3, 2026) — devnet node binary
 - **Blog:** https://blog.nomos.tech
 - **GitHub:** https://github.com/logos-blockchain/logos-blockchain (migrated from logos-co/nomos)
 - **Devnet dashboard:** https://devnet.blockchain.logos.co/web/
+- **Devnet faucet:** https://devnet.blockchain.logos.co/web/faucet/ (requires Discord credentials)
