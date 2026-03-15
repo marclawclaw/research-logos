@@ -4,7 +4,7 @@ type: case-study
 tags: [codex, waku, dapp, q-and-a, persistence, poc]
 status: poc → production-ready
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://blog.codex.storage/qaku-decentralised-q-a-with-persistence-enabled-by-codex/
 ---
@@ -54,13 +54,28 @@ Qaku (Questions & Answers over Waku) is a fully Web3-native Q&A board applicatio
 
 This pattern (Waku for transport, Codex for persistence) is a reusable architecture for any dapp needing real-time + durable data.
 
+## 2025 Updates
+
+### October 2025 — Full Redesign
+- **New web interface** launched with improved UX
+- **Desktop app** released, broadening accessibility beyond browsers
+- Active dogfooding underway with Waku test network and improved cache system integration
+- Better integration with Waku test network and cache system for strengthened reliability
+
+### November 2025 — Dogfooding Scale-Up
+- Continuing preparations for **large-scale dogfooding**
+- Integration of Logos Storage (Codex) into Status Desktop explored for archival capabilities
+- Qaku referenced as part of Logos Messaging application ecosystem
+
 ## Demonstrated At
 
 - Decentralised Data Summit 2024
 - Various online Logos/IFT events
+- Internal Logos/Waku team dogfooding
 
 ## Relevance to Franck's Work
 
 - Excellent PoC template showing how to combine Waku + Codex in a minimal real-world app
 - The "Qaku Cache" bridging pattern is reusable for other projects
 - Good example for developer documentation and RFP submissions
+- The desktop app expansion shows pathway from browser-only → cross-platform dapps

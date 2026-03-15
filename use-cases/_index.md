@@ -30,10 +30,12 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 - **Guru** — feedback exchange platform (Codex + Waku + Status Network)
 - **Qubetics** — AI product stack (Codex integration)
 - **Ethos** — web crawler for digital rights orgs (on Codex)
-- **OpChan** — anonymous engagement app on Waku (in active development, dogfooding planned)
-- [[Qaku Integration]] — decentralised Q&A boards (Waku + Codex)
+- **OpChan** — anonymous engagement app on Waku (AI app-generation feature added Oct 2025)
+- **SCALA** — secure calendar app for privacy-preserving scheduling (Waku, design stage)
+- [[Qaku Integration]] — decentralised Q&A boards (Waku + Codex, desktop app launched Oct 2025)
 - [[WhisperBox Integration]] — privacy-preserving forms (Waku, hackathon MVP)
-- [[Waku Hackathon Projects]] — Waku Sign, Waku Phone, Waku Remote, WNS (Oct 2025 hackathon)
+- [[Waku Hackathon Projects]] — Waku Sign, Waku Phone, Waku Remote, WNS, SCALA
+- [[RealFi Hackathon 2025]] — Shielded Micropay (Railgun), Tohaku (Tor wallet)
 - [[Cyphershare]] — encrypted file sharing app (Waku + Codex + TACo, live PoC)
 - [[FileHog]] — personal folder backup to Codex (PoC CLI tool)
 - [[Codex BitTorrent Integration]] — BitTorrent compatibility layer on Codex (testnet PoC)
@@ -64,6 +66,9 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 | Personal Backup | FileHog (folder-to-Codex) |
 | Legacy P2P Bridge | Codex × BitTorrent |
 | Encrypted File Sharing | Cyphershare (Waku + Codex + TACo) |
+| Scheduling / Calendar | SCALA (private group coordination) |
+| Privacy Payments | Shielded Micropay (Railgun + payment channels) |
+| Anonymous Wallets | Tohaku (Tor/Nym Ethereum wallet) |
 
 ## Ideas & Inspiration
 

@@ -3,9 +3,11 @@ topic: use-cases
 type: research-notes
 tags: [waku, hackathon, poc, prototypes, 2025]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://blog.waku.org/what-we-built-at-the-first-waku-internal-hackathon/
+  - https://blog.waku.org/waku-monthly-update-september-2025/
+  - https://blog.waku.org/waku-monthly-update-october-2025/
 ---
 
 # Waku Internal Hackathon Projects (October 2025)
@@ -85,6 +87,23 @@ Privacy-preserving name resolution system similar to ENS but:
 
 ---
 
+---
+
+## SCALA — Secure Calendar App
+
+**Category:** Privacy-Preserving Coordination  
+**Origin:** September/October 2025 app exploration
+
+SCALA is a privacy-preserving calendar and scheduling application concept demonstrating Waku's use for coordination tools:
+
+- Schedules and events shared over Waku — no centralised calendar server
+- Demonstrates use case for **private group coordination** without relying on Google Calendar, Apple Calendar, etc.
+- Designed as a showcase for privacy-preserving social coordination
+
+> Status: Design/concept phase as of October 2025
+
+---
+
 ## Summary Table
 
 | Project | Category | Stack | Maturity |
@@ -95,6 +114,7 @@ Privacy-preserving name resolution system similar to ENS but:
 | Passkey for RLN | Identity UX | Waku RLN | Exploratory |
 | Waku Remote | IoT/device control | Waku + Tauri | PoC |
 | WNS | Name service | Waku | Concept |
+| SCALA | Secure calendar | Waku | Design |
 
 ## Relevance to Franck's Work
 
