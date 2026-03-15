@@ -69,3 +69,27 @@ Format: `## [YYYY-MM-DD HH:MM UTC] [TOPIC] — [status: ok | paused | failed]`
 - Rescheduled: 0
 - Unrelated: nightly-security-review (886dfb83) has consecutiveErrors=2 — delivery channel config bug (channel: "last") — separate fix needed
 - Action: none required for research crons; tech-stack cron payload needs proper sources + commit instructions
+
+---
+
+## [2026-03-15 16:00 UTC] WATCHDOG — cycle summary
+- Cycle: 2026-03-15 10:00–16:00 UTC (3:00 AM AEDT watchdog run)
+- Window checked: 2026-03-15 10:00 UTC → 2026-03-15 16:00 UTC
+- Topics confirmed via cron state + git history:
+  - cryptarchia ✅ (ran 13:00 UTC — git: 43881ee re-verify 2026-03-16 AEST)
+  - vac-research ✅ (ran 13:15 UTC — git: ef66966 refresh notes 2026-03-16)
+  - devex ✅ (ran 13:30 UTC — git: 3e66c4f devex status 2026-03-16)
+  - use-cases ✅ (ran 13:45 UTC — git: da7a49c Guru, Qubetics updates)
+  - zk ✅ (ran 14:00 UTC — git: 9aa8dd7 refresh/re-verify)
+  - tech-stack ✅ (ran 14:15 UTC — no git commit; bare payload known issue)
+  - waku-messaging ✅ (ran 14:30 UTC — git: ad84ef7)
+  - codex-storage ✅ (ran 14:45 UTC — git: b140d10 Codex/Logos Storage atomic notes)
+  - blockchain ✅ (ran 15:02 UTC — git: 20d5d7c devnet v0.2.1 live)
+  - blend-network ✅ (ran 15:15 UTC — delivered ok; no new git commit this cycle)
+- Budget pauses: 0
+- True errors: 0 (all consecutiveErrors=0, all lastRunStatus=ok)
+- Missing run-log entries: 10 (Phase 2 agents continue to skip run-log write — confirmed via cron state + git)
+- Rescheduled: 0
+- Known ongoing issues:
+  - tech-stack cron payload still bare — no sources, no commit instructions
+  - nightly-security-review (886dfb83): consecutiveErrors now 0 (resolved)
