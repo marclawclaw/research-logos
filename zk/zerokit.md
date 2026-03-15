@@ -3,7 +3,7 @@ topic: zk
 type: library
 tags: [zk, rln, rust, wasm, circom, groth16, privacy, spam-protection]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://github.com/vacp2p/zerokit
   - https://rfc.vac.dev/vac/raw/rln-v2
