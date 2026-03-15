@@ -53,6 +53,14 @@ The Blend Network uses a **blending** approach (as opposed to stirring/mixing):
 - Reward-calculation logic under review (includes Blend activity proofs)
 - Session transition logic improved and tested
 
+### Concrete Anonymity Numbers
+Without the Blend Network, an adversary can infer a node's relative stake by observing how frequently it proposes blocks:
+- **TTI (Time To Infer) for 0.1% stake node: ~24 days**
+- Proportionally faster for larger stake holders
+- Blend Network makes this inference computationally intractable
+
+This is not a theoretical threat — it's a practical metric the Logos team calculated and used to justify mandatory Blend participation.
+
 ---
 
 ## Integration with Cryptarchia

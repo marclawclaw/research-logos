@@ -54,6 +54,14 @@ Blockchain execution environments built on Bedrock:
 - First demonstrated prototype: **zkEVM rollup with state transitions verified by light clients** (April 2025)
 - Planned 2026 features: decentralised sequencing, bridging, inter-Zone messaging
 
+### Why Sovereign Rollups (not Ethereum-style rollups)?
+Empirical data from Ethereum rollups justifies the Sovereign Rollup design:
+- **14,500 users** used Optimism's LayerZero (non-canonical bridge) in a single week
+- Only **243 users** used Optimism's canonical bridge
+- Most rollup value is stored in assets NOT secured by L1 at all — making canonical bridges irrelevant
+
+This validates the Logos approach: skip bridge contracts, give rollups full sovereignty.
+
 ### Sovereign Rollups (vs. Native Zones)
 Logos also supports pure **Sovereign Rollups** — completely independent modular blockchains using Bedrock only for consensus ordering and data availability:
 - Full freedom to define their own execution environment

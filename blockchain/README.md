@@ -21,7 +21,7 @@ It's designed for network states, parallel societies, and decentralised applicat
 | `privacy.md` | Blend Network — proposer anonymity |
 | `roadmap.md` | Timeline, milestones, testnet/mainnet targets |
 | `updates/2026-03-14.md` | Research log: 2025 YIR + Nov 2025 monthly |
-| `updates/2026-03-15.md` | Repo migration confirmed, devnet live, full codebase structure |
+| `updates/2026-03-15.md` | Repo migration confirmed, devnet live, codebase structure; PM: TTI figure, Sovereign Rollup stats |
 
 ## Quick Reference
 
