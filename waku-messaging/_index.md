@@ -2,8 +2,8 @@
 topic: waku-messaging
 type: index
 tags: [waku, logos-messaging, p2p, privacy, messaging]
-last_updated: 2026-03-15
-research_refresh: 2026-03-15
+last_updated: 2026-03-16
+research_refresh: 2026-03-16
 ---
 
 # Waku / Logos Messaging — Research Index
@@ -29,6 +29,8 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 | [[logos-messaging-rebrand]] | November 2025 rebrand: Waku → Logos Messaging |
 | [[waku-discovery]] | Peer discovery mechanisms — Peer Exchange, discv5, DHT research |
 | [[waku-chat-sdk]] | Chat SDK — Noise, Double Ratchet, De-MLS, Status integration |
+| [[waku-mixnet]] | Mixnet — libp2p mix integration into LightPush for metadata protection |
+| [[waku-reliable-channel-api]] | Reliable Channel API — SDS-based developer-facing reliability layer |
 
 ## Quick Reference
 
@@ -61,6 +63,8 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 - Mixnet integration for enhanced anonymity
 - DHT / metastable network research for peer discovery
 - Chat SDK: De-MLS group key agreement, Ratcheting Private Identifiers, WebRTC browser meshes
+- Mixnet: libp2p mix deployed in LightPush on testnet; mix node discovery research ongoing
+- Reliable Channel API: SDS integration in status-go merged; Franck Royer leading standardisation effort
 
 ## Related Research Areas
 

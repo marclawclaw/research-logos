@@ -3,7 +3,7 @@ topic: waku-messaging
 type: reference
 tags: [waku, use-cases, safe, multisig, dapp, web3, integrations]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://docs.waku.org
   - https://blog.waku.org/safe-uses-waku-to-power-decentralised-multisig-operations-with-harbour/
@@ -53,10 +53,24 @@ Waku is a general-purpose P2P communications stack — not just for chat. It rep
 - Waku (P2P comms) + TACo (Threshold Access Control, decentralised encryption) + [[Codex]] (storage)
 - Demonstrates composability of Logos stack for fully decentralised, private applications
 
+### Qaku (Q&A / Polling Application)
+- A Waku-native Q&A and polling app built on the Waku stack
+- Underwent **full redesign** in Oct 2025: new web interface and desktop app
+- Preparing for large-scale dogfooding as of Nov 2025
+- Demonstrates Waku's suitability for structured, persistent-question-type interactions beyond chat
+
+### OpChan (Anonymous Imageboard-style App)
+- Anonymous engagement via Waku content topics
+- Gained AI app-generation feature (Oct 2025)
+- Simplified its stack for easier developer onboarding
+
 ## Hackathon / Community
 
 - **W3PN Berlin Hackathon** (June 2025) — Waku powered P2P comms at Web3Privacy Now hacks event
-- **RealFi Hackathon** — Logos sponsored tracks: "Resilient Activist Technology" + "Logos x Tor Privacy Infrastructure"
+- **RealFi Hackathon** (Sep–Oct 2025) — Logos + Funding the Commons; tracks: "Resilient Activist Technology" + "Logos x Tor Privacy Infrastructure"
+  - **Winners — Logos x Tor track:**
+    - **Shielded Micropay** — Railgun + payment channels for private, verifiable service billing
+    - **Tohaku** — Tor/Nym-enabled Ethereum wallet protecting users from RPC tracking and metadata leaks
 - **ideas.waku.org** — Community-curated inspiration for builders
 - **Awesome Waku** — https://github.com/waku-org/awesome-waku/
 
