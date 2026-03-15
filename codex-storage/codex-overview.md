@@ -1,55 +1,61 @@
 ---
-title: "Codex Decentralised Storage — Overview"
-tags: [codex, logos, storage, decentralised, DDE]
+title: Codex / Logos Storage — Overview
+aliases: [Logos Storage, Codex DDE, Decentralised Durability Engine]
+tags: [logos, codex, storage, decentralised, DDE]
+created: 2026-03-16
+updated: 2026-03-16
 sources:
   - https://blog.codex.storage
-  - https://logos.co/tech-stack
-created: 2026-03-14
-updated: 2026-03-14
-status: current
+  - https://codex.storage/about/faq
+  - https://github.com/logos-storage/logos-storage-nim
 ---
 
-# Codex Decentralised Storage — Overview
+# Codex / Logos Storage — Overview
 
-## What Is Codex?
+## What It Is
 
-Codex is the **Logos storage module** — a privacy-preserving, decentralised storage system providing censorship resistance and data durability. Previously known as "Codex", it is now officially branded as the **Logos Storage** module within the Logos technology stack.
+Codex is the **Logos storage module** — a privacy-preserving, decentralised storage system providing censorship resistance and data durability. It is branded externally as **Codex** but internally renamed to **Logos Storage** (repo: `logos-storage/logos-storage-nim`).
 
-> "Prevents data manipulation and ensures that no single entity owns or controls the stored information."
+Its core design philosophy is the **Decentralised Durability Engine (DDE)** — going beyond a basic DSN by integrating reliability mechanisms, economic incentives, and cryptographic verification.
 
-The project self-describes as a **Decentralised Durability Engine (DDE)** — going beyond basic decentralised storage by adding robust reliability, fault-tolerance, and verifiability.
+## Core Goals
 
-## Core Value Proposition
+- Censorship-resistant, durable data storage
+- No single controlling entity
+- Verifiable proof that data is being stored (not just claimed)
+- Trustless economic incentives for storage providers
+- Privacy-preserving by default
 
-- **Censorship resistance** — no single entity can censor or remove stored data
-- **Data durability** — erasure coding + repair incentives prevent data loss
-- **Privacy-preserving** — zero-knowledge proofs for storage verification without data exposure
-- **Permissionless** — open marketplace; no KYC, no manual onboarding
-- **Logos ecosystem fit** — enables decentralised dapp frontend delivery within the Logos stack
+## Position in the Logos Stack
 
-## Status (as of March 2026)
-
-- Rebranded from Codex → **Logos Storage** (late 2025)
-- `codex.storage/about/faq` now redirects to `logos.co/tech-stack`
-- Testnet paused in August 2025 for core architecture revision
-- New testnet in development, building on feedback from prior testnet phase
-- Implementation repo: `github.com/logos-storage/logos-storage-nim` (previously `codex-storage/nim-codex`)
-
-## Key Differentiators vs. Other DSNs
-
-| Feature | Codex/Logos Storage | IPFS/Filecoin |
+| Layer | Module | Former Name |
 |---|---|---|
-| Redundancy method | Erasure coding + parity | Replication |
-| Proof mechanism | ZK proofs (Poseidon2) | Proof-of-Replication |
-| Marketplace | Automatic free-market contracts | Manual deal-making |
-| Repair incentives | Built-in, incentivised | Provider-managed |
-| KYC requirement | None | Filecoin+ requires KYC |
+| Blockchain | Nomos | Nomos |
+| Storage | Logos Storage | Codex |
+| Messaging | Waku | Waku |
 
-## Related Notes
+Codex is a first-class primitive for Logos dapps — enables decentralised frontend hosting, data persistence, and censorship-resistant content delivery.
 
-- [[codex-p2p-protocol]] — How the P2P network and data flow works
-- [[codex-tokenomics]] — CDX token and economic model
-- [[codex-roadmap-2025]] — Milestones and current status
-- [[codex-vs-filecoin]] — Detailed comparison
-- [[codex-use-cases]] — Applications and integrations
-- [[codex-implementation]] — nim-codex / logos-storage-nim repo
+## Implementation
+
+- Written in **Nim**
+- Built on **libp2p**
+- Licensed under Apache-2.0 / MIT
+- REST API: `api.codex.storage`
+- C API with Go bindings (Rust bindings: `nipsysdev/storage-rust-bindings`)
+
+## Current Status (as of March 2026)
+
+- Non-incentivised testnet live (Altruistic Mode)
+- Incentivised testnet targeted H2 2025
+- Mainnet readiness targeted Q3 2025 → now likely late 2025 / 2026
+- CDX testnet token not yet live on mainnet
+
+## Key Links
+
+- Blog: https://blog.codex.storage
+- Docs: https://docs.codex.storage
+- API: https://api.codex.storage
+- GitHub: https://github.com/logos-storage/logos-storage-nim
+- Discord: https://discord.gg/zsGeeSQs
+- Metrics: https://metrics.testnet.codex.storage

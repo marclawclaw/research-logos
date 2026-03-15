@@ -1,83 +1,54 @@
 ---
-title: "Codex Roadmap 2025 & Beyond"
-tags: [codex, logos, storage, roadmap, milestones, mainnet]
+title: Codex Roadmap 2025 and Beyond
+aliases: [Codex 2025 roadmap]
+tags: [logos, codex, roadmap, mainnet, testnet, milestones]
+created: 2026-03-16
+updated: 2026-03-16
 sources:
   - https://blog.codex.storage/the-codex-roadmap-for-2025-and-beyond/
-  - https://blog.codex.storage/codex-august-updates-2/
-  - https://blog.codex.storage/codex-july-updates/
-created: 2026-03-14
-updated: 2026-03-14
-status: current
+  - https://blog.codex.storage/codex-march-updates/
 ---
 
-# Codex Roadmap 2025 & Beyond
+# Codex Roadmap 2025 and Beyond
 
-## Milestones (Original Plan)
+## Q1 2025 ✅
 
-### ✅ Q1 2025 — Tokenomics Litepaper
+- **Tokenomics Litepaper** published → CDX token design, storage contracts, incentive model
+- **BitTorrent content v1 integration** — single-file end-to-end BitTorrent compatibility wired
+- **Codex CLI Installer** — streamlined testnet onboarding (`nim-codex` v0.2.0)
+- Non-incentivised testnet live (Altruistic Mode)
 
-- Published CDX Tokenomics Litepaper
-- BitTorrent content v1 integration (single-file end-to-end)
-- **Codex CLI Installer** released (v0.2.0) — simplified testnet onboarding
+## H2 2025 — Incentivised Testnet
 
-### 🔄 H2 2025 — Incentivised Testnet (Delayed/Revised)
+- Launch CDX testnet token with actual economic incentives
+- Onboard new storage providers
+- Developer bounties to build Codex-integrated apps
+- Feedback loop for tokenomics refinement
 
-Original plan:
-- Launch incentivised testnet with live CDX token rewards
-- Onboard new node operators
-- Developer bounty programs for apps building on Codex
+## Q3 2025 — Mainnet Readiness Target
 
-**Actual status (August 2025):**
-- Testnet **paused** following community feedback
-- Shifting focus to **core architecture revision** for stronger foundations
-- New testnet in development with improved design
-
-### ⏳ Q3 2025 — Mainnet Readiness (Delayed)
-
-Original target features for early mainnet:
+Features planned for mainnet v1:
 - Codex client installer
 - Encryption capabilities
 - Marketplace functionality
 - Data repair mechanisms
 
-Deferred to later phases:
+## Post-Mainnet Features (Later)
+
 - Bandwidth incentives
 - Mutable data support
-- Codex App
-- Aggregator network
-- Proof aggregation
+- Codex App (end-user interface)
+- Aggregator Network
+- Proof Aggregation (reduces on-chain gas costs)
 
-### 🎯 2026 — Mainstream Adoption Target
+## 2026 Goal
 
-- Goal: widespread adoption of Codex/Logos Storage platform
-- Target sectors: AI training data, archival blockchain storage, decentralised identities
-- Rebranding under Logos ecosystem complete (late 2025)
+**Mainstream adoption** — position Codex as the dominant decentralised storage layer for:
+- Decentralised AI model/dataset storage
+- Long-term archival storage
+- Decentralised identity / credential storage
+- Web3 dapp frontend hosting
 
-## Key 2025 Developments
+## Rebranding Note
 
-| Month | Development |
-|---|---|
-| Q1 2025 | Tokenomics Litepaper, CLI Installer v0.2.0, BitTorrent v1 integration |
-| March 2025 | 2025 roadmap published |
-| June 2025 | Integrations exploration (TACo, Akash, Waku) |
-| July 2025 | Evolution announcement — closer Logos ecosystem alignment |
-| August 2025 | Testnet paused; Qubetics AI integration; Events in LA, Lisbon, Brno |
-| Late 2025 | Rebrand from codex-storage → logos-storage |
-
-## Architecture Evolution (Aug 2025 Announcement)
-
-> "Transitioning to a new approach that is more closely aligned with the wider vision of the Logos ecosystem."
-
-- Revisiting core architecture for better usability and resilience
-- Stronger alignment with Logos blockchain and Waku messaging modules
-- `nim-codex` repo → `logos-storage/logos-storage-nim`
-
-## Student Programme
-
-Codex launched a **Student Programme** in 2025 offering Bachelor's/Master's students real-world experience on decentralised storage infrastructure.
-
-## Related Notes
-
-- [[codex-overview]] — What Codex is
-- [[codex-tokenomics]] — CDX token details
-- [[codex-use-cases]] — Applications driving adoption goals
+As of 2025, `codex-storage/nim-codex` on GitHub has been renamed to `logos-storage/logos-storage-nim`. The external Codex brand continues but internal alignment with Logos stack is underway. Blog/docs remain at `codex.storage` and `blog.codex.storage`.
