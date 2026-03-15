@@ -3,7 +3,7 @@ topic: waku-messaging
 type: reference
 tags: [waku, use-cases, safe, multisig, dapp, web3, integrations]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://docs.waku.org
   - https://blog.waku.org/safe-uses-waku-to-power-decentralised-multisig-operations-with-harbour/

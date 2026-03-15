@@ -3,7 +3,7 @@ topic: waku-messaging
 type: implementation
 tags: [waku, nwaku, nim, logos-delivery, node, implementation, sdk]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://github.com/waku-org/nwaku
   - https://github.com/logos-messaging/logos-delivery

@@ -3,6 +3,7 @@ topic: waku-messaging
 type: index
 tags: [waku, logos-messaging, p2p, privacy, messaging]
 last_updated: 2026-03-15
+research_refresh: 2026-03-15
 ---
 
 # Waku / Logos Messaging — Research Index
@@ -26,6 +27,8 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 | [[waku-use-cases]] | Real-world integrations: Safe Harbour, The Graph, Railgun, Status |
 | [[nwaku-logos-delivery]] | nwaku / logos-delivery — Nim reference implementation and SDKs |
 | [[logos-messaging-rebrand]] | November 2025 rebrand: Waku → Logos Messaging |
+| [[waku-discovery]] | Peer discovery mechanisms — Peer Exchange, discv5, DHT research |
+| [[waku-chat-sdk]] | Chat SDK — Noise, Double Ratchet, De-MLS, Status integration |
 
 ## Quick Reference
 
@@ -47,7 +50,7 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 - Ideas: https://ideas.waku.org
 - Specs: https://github.com/vacp2p/rfc-index/tree/main/waku
 
-## Active Development Areas (as of 2026-03-14)
+## Active Development Areas (as of 2026-03-15)
 
 - Service incentivisation (LightPush PoC → Store/Filter → Service Marketplace)
 - RLN testnet and browser credential workflows
@@ -56,6 +59,8 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 - WebRTC integration for browser low-latency meshes
 - Logos Messaging docs migration and brand consolidation
 - Mixnet integration for enhanced anonymity
+- DHT / metastable network research for peer discovery
+- Chat SDK: De-MLS group key agreement, Ratcheting Private Identifiers, WebRTC browser meshes
 
 ## Related Research Areas
 

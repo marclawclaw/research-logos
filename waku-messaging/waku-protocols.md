@@ -3,7 +3,7 @@ topic: waku-messaging
 type: reference
 tags: [waku, protocols, relay, filter, store, lightpush, rln, gossipsub]
 confidence: high
-last_updated: 2026-03-14
+last_updated: 2026-03-15
 sources:
   - https://docs.waku.org/learn/concepts/protocols
 ---
