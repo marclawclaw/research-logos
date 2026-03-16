@@ -3,8 +3,8 @@ topic: use-cases
 type: summary
 tags: [applications, integrations, case-studies, index]
 confidence: high
-last_updated: 2026-03-16
-last_run: 2026-03-16
+last_updated: 2026-03-17
+last_run: 2026-03-17
 sources:
   - https://blog.waku.org
   - https://blog.codex.storage
@@ -51,6 +51,8 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 - [[Codex AI Use Cases]] — AI/ML dataset storage, training data transparency, AI agents
 - [[Codex Archival Storage]] — Ethereum archival data, enterprise hybrid cloud, file sharing
 - [[Codex TACo Integration]] — decentralised access control (Codex + TACo + Waku stack)
+- [[Waku TACo Integration]] — Waku + TACo: P2P comms with decentralised encryption + access control (Waku-side perspective)
+- [[Waku Service Incentivisation]] — Lightpush PoC, reputation system, path to decentralised Waku Service Marketplace
 
 ## Use Case Categories
 
@@ -79,6 +81,8 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 | Scheduling / Calendar | SCALA (private group coordination) |
 | Privacy Payments | Shielded Micropay (Railgun + payment channels) |
 | Anonymous Wallets | Tohaku (Tor/Nym Ethereum wallet) |
+| Node Economics | Waku Service Incentivisation (pay-per-message, reputation) |
+| P2P + Encrypted Storage | Waku × TACo (programmable access control on Waku) |
 
 ## Ideas & Inspiration
 
