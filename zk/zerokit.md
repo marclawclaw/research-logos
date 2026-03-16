@@ -39,11 +39,51 @@ The Logos stack (Waku in particular) needs ZK capabilities embedded at the proto
 
 ## RLN Implementation Detail
 
-- Based on spec: `https://rfc.vac.dev/vac/raw/rln-v2`
+- Based on spec: `https://rfc.vac.dev/vac/raw/rln-v2` (Logos LIP #106, status: raw)
 - Uses **Circom circuits** through `ark-circom` for proof generation
 - Proof system: **Groth16** (via `ark-circom`)
 - Witness calculation: based on `circom-witnesscalc` by iden3
 - RLNv2 adds configurable rate limits (messages per epoch per user)
+
+### RLNv2 Sub-Protocols
+
+RLNv2 generalises v1 (which was fixed at 1 message/epoch) and defines two subprotocols:
+
+**RLN-Same** — uniform rate limit for all users  
+**RLN-Diff** — per-user rate limits based on public data (e.g. stake, reputation)
+
+Both follow the same three-step flow: **Registration → Signalling → Verification & Slashing**
+
+### RLNv2 Circuit Math
+
+For proof generation, the user submits:
+```
+identity_secret, path_elements (Merkle proof), x (signal_hash),
+message_id, external_nullifier, message_limit
+```
+
+Output calculated as:
+```
+a_0 = identity_secret_hash
+a_1 = poseidonHash([a_0, external_nullifier, message_id])
+y   = a_0 + x * a_1
+internal_nullifier = poseidonHash([a_1])
+```
+
+The circuit enforces that `internal_nullifier` repeats only if `message_id` exceeds the limit — triggering secret recovery (slashing) via Shamir's Secret Sharing.
+
+### Circuit Parameters
+
+- `DEPTH` — depth of membership Merkle tree (compile-time constant)
+- `LIMIT_BIT_SIZE` — bit size of limit numbers (e.g. 16-bit → max limit 65535)
+
+### RLN-Diff Registration
+
+Recommended approach: publish `identity_secret_hash` (= `poseidonHash(identity_secret)`) and `user_message_limit` publicly. Smart contract / server computes:
+```
+rate_commitment = poseidonHash(identity_secret_hash, userMessageLimit)
+```
+Merkle tree leaves are `rate_commitments`, not raw `id_commitments`. Avoids expensive on-chain zkSNARK verification at registration time.
 
 ## Who Uses It
 
@@ -86,10 +126,11 @@ Zerokit sits at the cryptographic foundation. If Waku RLN is the policy layer, Z
 
 ## Open Questions / Gaps
 
-- Is RLNv3 planned? The spec is at v2 — what additional features are on the roadmap?
+- Is RLNv3 planned? The spec is at v2 (LIP #106, status: raw) — what's on the roadmap?
 - Which chain hosts the RLN membership registry (Ethereum? Sepolia? Waku-internal)?
 - Is there a benchmarking suite for proof generation latency on constrained devices (Raspberry Pi)?
 - Are there plans to support proof systems beyond Groth16 (e.g., PLONK, Nova)?
+- RLN-Diff allows stake/reputation-based rate limits — are there live examples of this being used?
 
 ## Acknowledgements (from repo)
 
