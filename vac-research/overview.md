@@ -1,6 +1,6 @@
 # Vac Research — Overview
 
-> Last updated: 2026-03-16  
+> Last updated: 2026-03-17  
 > Source: [research.logos.co](https://research.logos.co/)
 
 ## What is Vac?

@@ -1,6 +1,6 @@
 # Vac Research — Analysis & Observations
 
-> Last updated: 2026-03-16
+> Last updated: 2026-03-17
 
 ## TL;DR
 
@@ -94,3 +94,4 @@ Vac Foundational
 - [ ] Check: lip.logos.co for any new Waku or Codex specs relevant to active PoCs
 - [ ] Forum: [forum.vac.dev](https://forum.vac.dev/) for R&D discussions
 - [x] Verified sources 2026-03-16 — content stable, nim-libp2p vsus page has stale status-im links but canonical repo confirmed at vacp2p/nim-libp2p
+- [x] Re-verified sources 2026-03-17 — no structural changes; nim-libp2p community Discord channel still active; LIP index (lip.logos.co) loading RFC index dynamically; rfc.vac.dev redirects confirmed to lip.logos.co

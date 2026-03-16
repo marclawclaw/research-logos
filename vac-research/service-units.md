@@ -1,6 +1,6 @@
 # Vac R&D Service Units (VSUs)
 
-> Last updated: 2026-03-16  
+> Last updated: 2026-03-17  
 > Source: [research.logos.co/vsus](https://research.logos.co/vsus)
 
 Vac operates **9 specialized R&D service units**. Each unit supports IFT projects and contributes to the broader decentralized ecosystem.

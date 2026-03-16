@@ -1,6 +1,6 @@
 # Vac Principles
 
-> Last updated: 2026-03-16  
+> Last updated: 2026-03-17  
 > Source: [research.logos.co/principles](https://research.logos.co/principles)  
 > Note: Inherited from Status principles (our.status.im/our-principles/) with minor stylistic changes.
 
