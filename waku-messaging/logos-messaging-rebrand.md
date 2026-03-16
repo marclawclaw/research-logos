@@ -3,7 +3,7 @@ topic: waku-messaging
 type: event
 tags: [waku, logos, rebrand, logos-messaging, identity, november-2025]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://blog.waku.org/logos-messaging-monthly-update-november-2025/
 ---

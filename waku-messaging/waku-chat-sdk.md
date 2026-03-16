@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, chat-sdk, noise-protocol, double-ratchet, de-mls, group-chat, cryptography, status]
 confidence: medium
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://blog.waku.org/logos-messaging-monthly-update-november-2025/
   - https://blog.waku.org/waku-monthly-update-october-2025/

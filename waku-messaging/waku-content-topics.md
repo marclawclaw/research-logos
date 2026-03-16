@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, content-topics, privacy, k-anonymity, filtering, protobuf]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://docs.waku.org/learn/concepts/content-topics
   - https://lip.logos.co/messaging/standards/core/10/waku2.html

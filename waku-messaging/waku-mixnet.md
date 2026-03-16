@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, mixnet, anonymity, privacy, libp2p, lightpush, metadata-protection]
 confidence: medium
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://blog.waku.org/waku-monthly-update-october-2025/
   - https://blog.waku.org/logos-messaging-monthly-update-november-2025/

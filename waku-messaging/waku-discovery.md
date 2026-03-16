@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, discovery, peer-exchange, dht, discv5, bootstrap, network, libp2p]
 confidence: medium
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://lip.logos.co/messaging/standards/core/10/waku2.html
   - https://blog.waku.org/logos-messaging-monthly-update-november-2025/

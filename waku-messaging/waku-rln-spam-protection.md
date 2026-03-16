@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, rln, spam, zero-knowledge, zk, rate-limiting, nullifier, membership]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://docs.waku.org/learn/concepts/protocols
   - https://rfc.vac.dev/vac/32/rln-v1/

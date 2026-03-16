@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, incentivisation, lightpush, rln, service-nodes, poc, linea, marketplace]
 confidence: medium
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://blog.waku.org/first-steps-toward-incentivising-waku-2/
 ---

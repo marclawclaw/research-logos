@@ -3,7 +3,7 @@ topic: waku-messaging
 type: reference
 tags: [waku, spec, rfc, 10-waku2, libp2p, gossipsub, protobuf, architecture]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://lip.logos.co/messaging/standards/core/10/waku2.html
   - https://github.com/vacp2p/rfc-index

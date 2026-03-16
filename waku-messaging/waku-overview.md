@@ -3,7 +3,7 @@ topic: waku-messaging
 type: concept
 tags: [waku, messaging, p2p, privacy, logos, censorship-resistance, web3]
 confidence: high
-last_updated: 2026-03-15
+last_updated: 2026-03-16
 sources:
   - https://docs.waku.org
   - https://blog.waku.org

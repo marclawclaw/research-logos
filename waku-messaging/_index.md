@@ -4,6 +4,12 @@ type: index
 tags: [waku, logos-messaging, p2p, privacy, messaging]
 last_updated: 2026-03-16
 research_refresh: 2026-03-16
+sources:
+  - https://docs.waku.org
+  - https://blog.waku.org
+  - https://github.com/waku-org/nwaku
+  - https://lip.logos.co/messaging/standards/core/
+  - https://forum.vac.dev/c/waku/5
 ---
 
 # Waku / Logos Messaging — Research Index
