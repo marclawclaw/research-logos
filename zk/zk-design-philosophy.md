@@ -3,7 +3,7 @@ topic: zk
 type: philosophy
 tags: [zk, privacy, architecture, ephemerality, sovereignty, waku, metadata]
 confidence: high
-last_updated: 2026-03-16
+last_updated: 2026-03-17
 sources:
   - https://blog.waku.org/beyond-proofs-zero-knowledge-as-a-design-philosophy/
   - https://vitalik.eth.limo/general/2019/05/09/control_as_liability.html

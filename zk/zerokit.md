@@ -3,10 +3,11 @@ topic: zk
 type: library
 tags: [zk, rln, rust, wasm, circom, groth16, privacy, spam-protection]
 confidence: high
-last_updated: 2026-03-16
+last_updated: 2026-03-17
 sources:
   - https://github.com/vacp2p/zerokit
-  - https://rfc.vac.dev/vac/raw/rln-v2
+  - https://lip.logos.co/ift-ts/raw/rln-v2
+  - https://lip.logos.co/ift-ts/raw/multi-message_id-burn-rln
 ---
 
 # Zerokit
@@ -35,15 +36,20 @@ The Logos stack (Waku in particular) needs ZK capabilities embedded at the proto
 | **Circom Compatibility** | ZK circuits written in Circom, loaded via ark-circom |
 | **Cross-Platform** | Multi-arch via cross-rs (x86_64, ARM, etc.) |
 | **FFI-Friendly** | C-compatible FFI for use in Nim, Go, and other languages |
-| **WASM Support** | Compiles to WebAssembly for browser/JS environments |
+| **WASM Support** | Compiles to WebAssembly for browser/JS environments (v0.8.0+) |
+| **Stateless Mode** | RLN without maintaining Merkle tree state |
+| **Parallel Processing** | Optional parallel proof generation for performance |
+| **Multi-Message-ID Burn** | Consume multiple message_id units in a single proof (efficiency extension) |
 
 ## RLN Implementation Detail
 
-- Based on spec: `https://rfc.vac.dev/vac/raw/rln-v2` (Logos LIP #106, status: raw)
+- Based on spec: `https://lip.logos.co/ift-ts/raw/rln-v2` (Logos LIP, status: raw)
 - Uses **Circom circuits** through `ark-circom` for proof generation
 - Proof system: **Groth16** (via `ark-circom`)
 - Witness calculation: based on `circom-witnesscalc` by iden3
 - RLNv2 adds configurable rate limits (messages per epoch per user)
+- **Multi-Message-ID burn** extension (separate LIP): consume multiple `message_id` units in a single proof — useful for high-throughput apps
+- Current crate version: **1.0.0** (note: v0.7.0 lacks WASM/x32 support; WASM requires v0.8.0+)
 
 ### RLNv2 Sub-Protocols
 
@@ -124,9 +130,19 @@ Logos Stack
 
 Zerokit sits at the cryptographic foundation. If Waku RLN is the policy layer, Zerokit is the proof engine.
 
+## Merkle Tree Variants
+
+Three implementations, each with different trade-offs:
+
+| Variant | Feature Flag | Storage | Best For |
+|---------|-------------|---------|----------|
+| **Full Merkle Tree** | `fullmerkletree` | In-memory (fully pre-allocated) | Fastest; frequent random access |
+| **Optimal Merkle Tree** | `optimalmerkletree` | HashMap (sparse) | Memory efficiency; partially-populated trees |
+| **Persistent Merkle Tree** | `pmtree-ft` | Disk via [sled](https://github.com/spacejam/sled) | Large datasets; persistence across restarts |
+
 ## Open Questions / Gaps
 
-- Is RLNv3 planned? The spec is at v2 (LIP #106, status: raw) — what's on the roadmap?
+- Is RLNv3 planned? The spec is at v2 (status: raw) — what's on the roadmap?
 - Which chain hosts the RLN membership registry (Ethereum? Sepolia? Waku-internal)?
 - Is there a benchmarking suite for proof generation latency on constrained devices (Raspberry Pi)?
 - Are there plans to support proof systems beyond Groth16 (e.g., PLONK, Nova)?
