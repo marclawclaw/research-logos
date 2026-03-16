@@ -95,3 +95,4 @@ Vac Foundational
 - [ ] Forum: [forum.vac.dev](https://forum.vac.dev/) for R&D discussions
 - [x] Verified sources 2026-03-16 — content stable, nim-libp2p vsus page has stale status-im links but canonical repo confirmed at vacp2p/nim-libp2p
 - [x] Re-verified sources 2026-03-17 — no structural changes; nim-libp2p community Discord channel still active; LIP index (lip.logos.co) loading RFC index dynamically; rfc.vac.dev redirects confirmed to lip.logos.co
+- [x] Re-verified sources 2026-03-17 (05:00 AEDT) — all sources stable; research.logos.co/vsus, research.logos.co/vips, research.logos.co/research, research.logos.co/principles confirmed accessible; vacp2p/rfc-index still replacing old rfc.vac.dev; nim-libp2p supported Nim versions: v2.0.16 and v2.2.6; no new service units or VIPs detected
