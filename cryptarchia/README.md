@@ -1,6 +1,6 @@
 # Cryptarchia Consensus — Research Notes
 
-> Last updated: 2026-03-15 UTC (re-verified sources 2026-03-16 AEST — no new content; sources confirmed current)
+> Last updated: 2026-03-16 UTC
 > Sources: [Nomos Blog (Cryptarchia intro)](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/), [Lottery Difficulty deep-dive (Sep 2025)](https://blog.nomos.tech/lottery-difficulty-in-private-pos-the-case-of-cryptarchia/), [logos-blockchain-specs](https://github.com/logos-blockchain/logos-blockchain-specs/tree/master/cryptarchia), [consensus-research](https://github.com/logos-co/consensus-research)
 
 > **Note on `consensus-research`**: This repo (Rust, min v1.63) focuses on **Snowball and Claro** (avalanche-style DAG consensus protocols), NOT Cryptarchia. It contains `consensus/snowball`, `consensus/claro`, and `prototypes/snow-family` simulation apps. Cryptarchia's reference implementation lives in `logos-blockchain-specs` (Python). The two consensus tracks are separate.
@@ -246,11 +246,53 @@ Relevant research:
 
 ---
 
+## Wire Format (messages.abnf)
+
+The block wire format is defined in `messages.abnf` (VERSION 0.1):
+
+```abnf
+BLOCK            = HEADER CONTENT
+HEADER           = VERSION HEADER-FIELDS MOCK-LEADER-PROOF ORPHAN-PROOFS
+HEADER-FIELDS    = CONTENT-SIZE CONTENT-ID BLOCK-DATE PARENT-ID
+MOCK-LEADER-PROOF= COMMITMENT NULLIFIER EVOLVE-COMMITMENT
+ORPHAN-PROOFS    = ORPHAN-PROOF-CNT *ORPHAN-PROOF  ; U32 count, then headers
+ORPHAN-PROOF     = HEADER  ; non-recursive: orphan leadership proofs only, not their orphans
+
+; Primitives
+U32              = 4OCTET  ; big-endian
+U64              = 8OCTET  ; big-endian
+HEADER-ID        = 32OCTET
+COMMITMENT       = 32OCTET
+NULLIFIER        = 32OCTET
+```
+
+Key points:
+- **Orphan proofs**: headers included to claim credit for "orphaned" leadership proofs (affects density calculation)
+- **MOCK-LEADER-PROOF** includes `EVOLVE-COMMITMENT` — placeholder for the forward-secrecy key evolution mechanism
+- Block header ID = `Hash("BLOCK_ID", version, content_size, content_id, slot, parent, nonce_contribution)`
+
+---
+
+## Sync Protocol (sync.py)
+
+The spec includes a `sync.py` module for bootstrapping synchronisation. Referenced in the Notion doc:
+> [Cryptarchia v1 Bootstrapping/Synchronization](https://www.notion.so/Cryptarchia-v1-Bootstrapping-Synchronization-1fd261aa09df81ac94b5fb6a4eff32a6)
+
+Follower states:
+- `BOOTSTRAPPING` → uses genesis fork choice (`maxvalid_bg`, density-based for deep forks)
+- `ONLINE` → uses Praos fork choice (`maxvalid_mc`, longest chain, discards deep forks)
+
+Transition via `follower.to_online()` once node has synced the chain. The bootstrapping phase accepts blocks from potentially adversarial sources safely due to the density rule.
+
+---
+
 ## Spec / Code Locations
 
 | Resource | URL |
 |----------|-----|
 | Python reference spec | [logos-blockchain/logos-blockchain-specs/cryptarchia/](https://github.com/logos-blockchain/logos-blockchain-specs/tree/master/cryptarchia) |
+| `cryptarchia.py` | [cryptarchia.py (raw)](https://raw.githubusercontent.com/logos-co/nomos-specs/master/cryptarchia/cryptarchia.py) |
+| `messages.abnf` | [messages.abnf (raw)](https://raw.githubusercontent.com/logos-co/nomos-specs/master/cryptarchia/messages.abnf) |
 | Blog post: Cryptarchia intro (May 2025) | [blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/](https://blog.nomos.tech/nomos-cryptarchia-improving-on-ouroboros-crypsinous/) |
 | Blog post: Lottery Difficulty / Stake Inference (Sep 2025) | [blog.nomos.tech/lottery-difficulty-in-private-pos-the-case-of-cryptarchia/](https://blog.nomos.tech/lottery-difficulty-in-private-pos-the-case-of-cryptarchia/) |
 | Crypsinous paper | [eprint.iacr.org/2018/1132](https://eprint.iacr.org/2018/1132.pdf) |
