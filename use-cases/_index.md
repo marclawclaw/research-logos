@@ -4,6 +4,7 @@ type: summary
 tags: [applications, integrations, case-studies, index]
 confidence: high
 last_updated: 2026-03-16
+last_run: 2026-03-16
 sources:
   - https://blog.waku.org
   - https://blog.codex.storage
@@ -38,10 +39,12 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 - [[Qaku Integration]] — decentralised Q&A boards (Waku + Codex, desktop app launched Oct 2025)
 - [[WhisperBox Integration]] — privacy-preserving forms (Waku, hackathon MVP)
 - [[Waku Hackathon Projects]] — Waku Sign, Waku Phone, Waku Remote, WNS, SCALA
+- [[W3PN Berlin Hackathon 2025]] — Aside (ephemeral chat), Portal (geo-based group chat), Open Lavatory (p2p wallet-dapp signalling) — W3PN Hacks June 2025
 - [[RealFi Hackathon 2025]] — Shielded Micropay (Railgun), Tohaku (Tor wallet), CommuniFi (activist tech)
 - [[Cyphershare]] — encrypted file sharing app (Waku + Codex + TACo, live PoC)
 - [[FileHog]] — personal folder backup to Codex (PoC CLI tool)
 - [[Codex BitTorrent Integration]] — BitTorrent compatibility layer on Codex (testnet PoC)
+- [[Codex Akash Integration]] — Codex storage node on Akash decentralised compute (no local hardware, no cloud)
 
 ## Use Case Thematic Research
 
@@ -68,6 +71,10 @@ Applications and projects building on the [[Logos Overview|Logos]] stack.
 | L2 Coordination | Mempool coordination |
 | Personal Backup | FileHog (folder-to-Codex) |
 | Legacy P2P Bridge | Codex × BitTorrent |
+| Decentralised Compute | Codex × Akash (node on decentralised infra) |
+| Geolocation Chat | Portal (W3PN hackathon) |
+| Ephemeral Comms | Aside (W3PN hackathon) |
+| Wallet Signalling | Open Lavatory (p2p WalletConnect alternative) |
 | Encrypted File Sharing | Cyphershare (Waku + Codex + TACo) |
 | Scheduling / Calendar | SCALA (private group coordination) |
 | Privacy Payments | Shielded Micropay (Railgun + payment channels) |
