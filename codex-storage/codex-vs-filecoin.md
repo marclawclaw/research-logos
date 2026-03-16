@@ -1,53 +1,72 @@
 ---
-title: Codex vs Filecoin — Comparison
-aliases: [Codex Filecoin comparison]
-tags: [logos, codex, filecoin, comparison, DSN, storage]
+title: "Codex vs Filecoin – Decentralised Storage Comparison"
+tags: [logos, codex, filecoin, storage, comparison, ipfs, dde]
 created: 2026-03-16
 updated: 2026-03-16
 sources:
   - https://blog.codex.storage/codex-storage-vs-filecoin-enhancing-durability-for-decentralised-storage/
 ---
 
-# Codex vs Filecoin — Comparison
+# Codex vs Filecoin – Decentralised Storage Comparison
 
-## At a Glance
+## Background
 
-| Dimension | Filecoin | Codex |
+**Filecoin** — well-established DSN built by Protocol Labs on top of IPFS. Public storage marketplace, dual market for storage and retrieval. Uses FIL token.
+
+**Codex** — newer protocol, part of the Logos stack. DDE architecture. Emphasis on cryptographic durability guarantees and permissionless access.
+
+## Protocol Design Comparison
+
+| Feature | Filecoin | Codex |
 |---|---|---|
-| Built on | IPFS (Protocol Labs) | libp2p (Logos stack) |
-| Redundancy method | Replication | Erasure coding + replication |
-| Storage proof | PoRep / PoSt | ZK proofs (Poseidon2) |
-| Proof verifiers | Filecoin miners | Public Ethereum blockchain |
-| Token | FIL (own chain) | CDX (Ethereum) |
-| Provider onboarding | Manual; KYC for Filecoin Plus | Automated threshold-based |
-| Retrieval market | Dual (storage + retrieval miners) | Unified free-market marketplace |
-| Repair incentives | Provider-operated (ZFS etc.) | Built-in incentivised repair |
-| Current status | Mainnet live | Testnet (non-incentivised) |
+| Underlying P2P layer | IPFS | libp2p (custom) |
+| Redundancy | Replication (multiple full copies) | Erasure coding + parity blocks |
+| Storage efficiency | Low (linear overhead per replica) | High (tunable via coding params) |
+| Proof mechanism | PoRep (Proof of Replication) + PoSt (Proof of Spacetime) | ZK proofs (Poseidon2, on-chain verifiable) |
+| Verifier | Internal network consensus | Public blockchain nodes |
+| Provider onboarding | Manual; Filecoin Plus requires KYC | Permissionless, automatic matching |
+| Pricing | Negotiated / market rates | Real-time, based on operator costs |
+| Retrieval market | Dual market (storage + retrieval miners) | Planned incentivised retrieval marketplace |
+| Hot storage | Storacha (built on IPFS/Filecoin) | Planned; no separate hot layer yet |
+| Repair incentives | Limited (provider-operated) | Built into protocol |
 
-## Durability Approach
+## Durability Approaches
 
-**Filecoin:** Replication-based durability. Multiple copies of files held across providers. ZFS snapshots for provider-level redundancy. Works but storage-inefficient at scale.
+### Filecoin
+- Durability via **replication**: clients specify replication factor
+- Storage providers responsible for their own fault tolerance (e.g. ZFS snapshots)
+- Proofs verify possession but not cross-node dispersal
 
-**Codex:** Erasure coding generates parity data → recover from partial loss without full replication. Strategic dispersal ensures original + parity blocks never co-located. More efficient at scale.
+### Codex
+- Durability via **erasure coding**: parity data mathematically reconstructs lost blocks
+- **Strategic dispersal**: original and parity blocks for any segment are spread across different nodes (enforced by protocol)
+- **Incentivised repair**: protocol-level rewards for nodes that repair degraded data
+- Proofs are ZK-based and publicly verifiable on-chain
 
-## Storage Marketplace
+## Retrieval
 
-**Filecoin:** Clients create Filecoin Deals with named providers. Filecoin Plus requires human KYC. Services like Lighthouse and Storacha abstract this.
+| | Filecoin | Codex |
+|---|---|---|
+| Direct retrieval | From storage provider (FIL fee) | From storage provider (planned) |
+| Network retrieval | Via IPFS nodes (if available) | Via P2P network |
+| Hot layer | Storacha (separate service, 5 GB free) | Not yet separate |
 
-**Codex:** Clients post storage requests. Providers auto-match against their pre-configured constraints. No manual deal negotiation. More scalable and decentralised.
+## Access & Permissions
 
-## Verification
+- **Filecoin**: open, but Filecoin Plus program (for cheaper storage) requires human-based KYC
+- **Codex**: fully permissionless — no KYC, no human gatekeeping at any layer
 
-**Filecoin:** Proofs verified by Filecoin chain validators.
+## Summary
 
-**Codex:** Proofs published to Ethereum — any node can verify. Truly public and permissionless.
+Codex aims to be a more durability-focused, verifiable, and permissionless alternative to Filecoin. Its key differentiators are:
+1. Erasure coding over replication (efficiency + durability)
+2. Strategically enforced data dispersal
+3. On-chain ZK proofs verifiable by anyone
+4. Fully permissionless marketplace (no manual bidding, no KYC)
+5. Protocol-native repair incentives
 
-## Developer Experience
+## Related Notes
 
-**Filecoin:** SDK + CLI via service providers (Storacha, Lighthouse). 5GB free tier available.
-
-**Codex:** REST API, C API, Go bindings, Rust bindings. Direct node integration. Currently free (altruistic testnet) — no fees.
-
-## Verdict (Codex's Position)
-
-Codex positions itself as more durable, more verifiable, and more decentralised than Filecoin. The key differentiation is the DDE architecture: erasure coding + ZK proofs + incentivised repair as a native stack, not bolt-ons.
+- [[codex-dde-architecture]] — How erasure coding and ZK proofs work in Codex
+- [[codex-storage-marketplace]] — Codex marketplace mechanics
+- [[codex-overview]] — Codex position in Logos stack
