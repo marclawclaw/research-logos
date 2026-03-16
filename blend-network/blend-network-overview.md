@@ -1,40 +1,46 @@
 ---
-title: "Blend Network — Overview"
-tags: [nomos, blend-network, proposer-anonymity, privacy, mixnet]
+title: "Blend Network – Overview"
+tags: [nomos, blend-network, privacy, proposer-anonymity, pos]
 source: https://blog.nomos.tech/the-blend-network-improving-nomos-privacy-guarantees/
-date: 2026-03-16
+date: 2026-03-17
+topic: blend-network
 ---
 
-# Blend Network — Overview
+# Blend Network – Overview
 
-## Summary
+The Nomos Blend Network is an anonymous broadcasting protocol designed to sever the link between block proposers and their proposals. It operates as a **Bedrock Service** within the Nomos architecture, complementing the Private Proof of Stake (PPoS) consensus protocol Cryptarchia.
 
-The Nomos Blend Network is an anonymous broadcasting protocol and Bedrock Service designed to protect block proposers from deanonymisation via network analysis. It extends the privacy guarantees of Cryptarchia (Private PoS) by obfuscating the link between a proposal and its proposer.
+## Problem It Solves
 
-## Key Points
+Cryptarchia's private leadership election hides *who will* propose a block before the fact, but once a proposal is broadcast, network analysis can still link the message back to the proposer. Without further protection:
 
-- **Purpose:** Prevent adversaries from linking a block proposal to its proposer through network observation.
-- **Mechanism:** Proposals travel through multiple intermediary nodes before being broadcast, using layered encryption, random delays, and artificial cover traffic.
-- **Role in Nomos:** A [Bedrock Service](https://blog.nomos.tech/participating-in-nomos-bedrock-services/) — participation requires staking and registration via the Service Declaration Protocol (SDP).
-- **Design goals:** Minimise bandwidth usage vs. general-purpose mixnets; maximise decentralisation by involving all participating nodes.
+- **Unlinkability** is weak: adversaries can link a proposal to the node that sent it.
+- **Stake privacy** is exposed: by observing how often a node proposes, an adversary can infer its relative stake. Time-to-infer (TTI) without Blend ≈ **24 days** for a node with 0.1% stake.
 
-## Why Blend Exists
+## What Blend Does
 
-Cryptarchia's private leadership election keeps the proposer schedule secret, but once a block is proposed the proposer's identity can still be inferred by monitoring network traffic. The Blend Network addresses this residual exposure:
+Blend routes proposals through several intermediary nodes before broadcasting them to the full Nomos Network, using three main techniques:
 
-- Without Blend: an adversary can infer a node's relative stake in ~24 days for a node holding 0.1% stake.
-- With Blend (3-hop path, adversary controlling 10% stake): **TTI > 10 years** at 60% confidence; **TTL > 10 years** at 50% confidence.
+1. **Layered encryption (encapsulation)** – each node in the relay path peels one layer, transforming the message.
+2. **Random timing delays** – nodes hold messages for a randomised duration before re-disseminating, breaking timing correlation.
+3. **Cover traffic** – artificial indistinguishable messages increase network noise.
 
-## Participation
+## Anonymity Guarantees (with Blend)
 
-| Role | Description |
-|------|-------------|
-| Core node | Declared, staked, maintains minimum peer connections, subject to message quota |
-| Edge node | Can send proposals into the network; does not relay |
+For an adversary controlling 10% of total stake, with a 3-hop relay path and a target node holding 0.1% stake:
+
+- **Time to link (TTL)** a proposal to its proposer: > 10 years at 50% probability.
+- **Time to infer (TTI)** relative stake: > 10 years at 60% probability.
+
+## Design Goals
+
+- **Minimal bandwidth** – lower overhead than general-purpose mixnets.
+- **Decentralisation** – all participating (declared) core nodes join the obfuscation.
+- **Scalability** – quota system bounds message rate per node.
 
 ## Related Notes
 
-- [[blend-network-encapsulation]] — layered encryption detail
-- [[blend-network-message-structure]] — public/private header breakdown
-- [[blend-network-security-properties]] — unlinkability, stake privacy
-- [[blend-network-cover-traffic]] — artificial traffic mechanism
+- [[blend-network-message-encapsulation]]
+- [[blend-network-security-properties]]
+- [[blend-network-cover-traffic]]
+- [[blend-network-message-lifecycle]]

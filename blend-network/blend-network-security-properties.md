@@ -1,52 +1,64 @@
 ---
-title: "Blend Network — Security Properties"
-tags: [nomos, blend-network, unlinkability, stake-privacy, adversary-model]
-source: https://blog.nomos.tech/the-blend-network-improving-nomos-privacy-guarantees/
-date: 2026-03-16
+title: "Blend Network – Security Properties"
+tags: [nomos, blend-network, security, unlinkability, stake-privacy, zk-proofs]
+source: https://blog.nomos.tech/message-encapsulation-in-the-nomos-blend-network/
+date: 2026-03-17
+topic: blend-network
 ---
 
-# Blend Network — Security Properties
-
-## Summary
-
-The Blend Network is designed to withstand a broad adversary model and deliver two core privacy properties: **unlinkability** and **stake privacy**.
+# Blend Network – Security Properties
 
 ## Adversary Model
 
-| Axis | Variants |
-|------|----------|
-| Activity | Active (can modify node behaviour) vs. Passive (observe only) |
-| Scope | Global (full network view) vs. Local (only compromised nodes) |
-| Position | External observer vs. Full participant |
+Blend is designed to protect against a broad adversary class:
 
-Security analyses assume worst-case behaviour, provided a majority of honest stake is maintained.
+| Adversary Type | Description |
+|---|---|
+| **Passive** | Observes network traffic but does not modify behaviour |
+| **Active** | Controls some nodes; can modify their behaviour |
+| **Global observer** | Sees all network traffic simultaneously |
+| **Local observer** | Only sees traffic at compromised nodes |
+| **Internal** | Participates as a full Blend node |
+| **External** | Monitors communications from outside |
 
-## Core Privacy Properties
+Security analyses assume worst-case behaviour, provided the majority-honest-stake assumption holds.
+
+## Core Security Properties
 
 ### Unlinkability
-A proposer cannot be linked to their proposal based on network observation. Even an adversary controlling multiple Blend nodes cannot correlate incoming and outgoing messages unless they control **every node on the specific message path**.
 
-Cryptographic transformation at each hop ensures messages look completely different before and after processing. Combined with random delays, this defeats timing analysis.
-
-### Stake Privacy
-Because proposal frequency is proportional to stake, deanonymisation enables stake inference. Blend makes this impractical:
-
-- **Without Blend:** TTI ≈ 24 days for a 0.1% stake node
-- **With Blend (3 hops, 10% adversary stake):** TTI > 10 years at 60% confidence
+Even with multiple compromised nodes, an adversary **cannot link** incoming and outgoing messages unless they control every node in a message's path. Each hop cryptographically transforms the message, so content-based linking is infeasible across hops. Combined with random delays, timing-based linking is also prevented.
 
 ### Preventing Message Association
-Ephemeral key pairs are generated fresh for every message, so an adversary cannot group messages by their sender based on key reuse.
+
+Ephemeral key pairs are generated fresh per message. Keys are session-scoped and quota-limited, preventing an adversary from grouping multiple messages from the same sender based on key reuse or shared metadata.
 
 ### Verifiability
-Despite strong anonymity, nodes can verify:
-- Messages are correctly formed
-- Path was randomly selected (Proof of Selection)
-- Sender has not exceeded their quota (Proof of Quota)
 
-Verification is done via **zero-knowledge proofs** embedded in each message — anonymity is not compromised.
+Despite strong anonymity guarantees, nodes can verify:
+- Messages are correctly formed (via cryptographic signatures embedded in headers).
+- The relay path was randomly selected (Proof of Selection / PoS).
+- Senders have not exceeded their message quota (Proof of Quota / PoQ).
+
+This is achieved using **zero-knowledge proofs**, preserving anonymity while enabling correctness checks.
+
+### Stake Privacy
+
+Because proposals cannot be linked to proposers, adversaries cannot count how often a node proposes and therefore cannot infer relative stake. TTI (time to infer) with Blend exceeds **10 years** for a 0.1%-stake node against a 10%-stake adversary.
+
+## Quota System (Anti-Spam)
+
+Two quota mechanisms prevent Blend from being abused:
+
+- **PoQ per ephemeral key**: limits number of keys (and thus messages/hops) per session.
+- **Nullifiers**: prevent proof reuse across messages or sessions.
+
+## Random Delays
+
+Messages are assigned a randomised hold delay at each hop before re-dissemination. This breaks timing correlation between incoming and outgoing messages, preventing a global observer from linking message streams across nodes even when content has been transformed.
 
 ## Related Notes
 
-- [[blend-network-overview]] — why Blend exists
-- [[blend-network-encapsulation]] — how unlinkability is implemented cryptographically
-- [[blend-network-cover-traffic]] — how cover traffic supports these properties
+- [[blend-network-overview]]
+- [[blend-network-message-encapsulation]]
+- [[blend-network-cover-traffic]]
