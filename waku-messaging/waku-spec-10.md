@@ -3,7 +3,7 @@ topic: waku-messaging
 type: reference
 tags: [waku, spec, rfc, 10-waku2, libp2p, gossipsub, protobuf, architecture]
 confidence: high
-last_updated: 2026-03-16
+last_updated: 2026-03-17
 sources:
   - https://lip.logos.co/messaging/standards/core/10/waku2.html
   - https://github.com/vacp2p/rfc-index
@@ -19,7 +19,7 @@ sources:
 - **Status:** Draft (Standards Track)
 - **Editor:** Hanno Cornelius
 - **Key contributors:** Sanaz Taheri, Reeshav Khan, Daniel Kaiser, Oskar Thorén
-- **Last significant revision:** April 2025 (10/WAKU2 Update)
+- **Last significant revision:** February 2026 (math support added — [afd94c8](https://github.com/vacp2p/rfc-index/blob/afd94c8bc1420376ae9af7e14a4feb246f2ed621/docs/messaging/standards/core/10/waku2.md)); previously April 2025 (10/WAKU2 Update)
 
 ## Historical Roots
 

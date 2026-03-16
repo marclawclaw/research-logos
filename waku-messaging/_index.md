@@ -2,8 +2,8 @@
 topic: waku-messaging
 type: index
 tags: [waku, logos-messaging, p2p, privacy, messaging]
-last_updated: 2026-03-16
-research_refresh: 2026-03-16
+last_updated: 2026-03-17
+research_refresh: 2026-03-17
 sources:
   - https://docs.waku.org
   - https://blog.waku.org
@@ -56,9 +56,10 @@ Waku is a family of P2P communication protocols providing **censorship-resistant
 - Docs: https://docs.waku.org
 - Blog: https://blog.waku.org
 - Ideas: https://ideas.waku.org
-- Specs: https://github.com/vacp2p/rfc-index/tree/main/waku
+- Specs (canonical): https://lip.logos.co/messaging/standards/core/
+- Specs (source): https://github.com/vacp2p/rfc-index/tree/main/docs/messaging
 
-## Active Development Areas (as of 2026-03-15)
+## Active Development Areas (as of 2026-03-17)
 
 - Service incentivisation (LightPush PoC → Store/Filter → Service Marketplace)
 - RLN testnet and browser credential workflows
