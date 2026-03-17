@@ -76,7 +76,9 @@ Native Zones sharing a common ledger were deprioritized in 2025 in favor of Sove
 
 ---
 
-## LSSA (Logos State Separation Architecture)
+## LSSA / LEZ (Logos State Separation Architecture / Logos Execution Zone)
+
+> **Note:** LSSA has been renamed to **LEZ (Logos Execution Zone)** as of early 2026. The name change reflects a shift from "state separation" to "execution zone" terminology. PR #182 in logos-docs captures this rename.
 
 The first Sovereign Zone — the primary home for Logos applications:
 - **Dual account model:** public accounts + private (shielded) accounts
@@ -87,6 +89,136 @@ The first Sovereign Zone — the primary home for Logos applications:
 - LSSA is the primary focus for mainnet launch; other Zones will follow
 
 **GitHub:** https://github.com/logos-blockchain/lssa
+
+### NSSA / LSSA / LEZ — History and Architecture
+
+> **Note:** NSSA → LSSA → LEZ are all the same project, just renamed over time. NSSA = Nescience State Separation Architecture, later renamed to Logos State Separation Architecture, then to Logos Execution Zone.
+
+> ℹ️ The project is currently under development, and certain components may still change or be optimized. The purpose of this document is to provide an overview of Nescience's progress and background, offering context and references to supporting resources. For official specifications and the rationale behind specific design choices, please refer to the official documentation and related materials linked in the [resources section](https://www.notion.so/NSSA-Nescience-State-Separation-Architecture-2928f96fb65c80cc9f30e5a81bd1747f?pvs=21).
+
+#### Background
+
+Typically, public blockchains maintain a fully transparent state, where the mapping from addresses to account values is entirely visible. In NSSA, we introduce a parallel *private state*, a new layer of accounts that coexists with the public one. The public and private states can be viewed as a partition of the address space: accounts with public addresses are openly visible, while private accounts are accessible only to holders of the corresponding viewing keys. Consistency across both states is enforced through zero-knowledge proofs (ZKPs).
+
+Public accounts are represented on-chain as a visible map from addresses to account states and are modified in-place when their values change. Private accounts, by contrast, are never stored in raw form on-chain. Each update creates a new commitment, which cryptographically binds the current value of the account while preserving privacy. Commitments of previous valid versions remain on-chain, but a nullifier set is maintained to mark old versions as spent, ensuring that only the most up-to-date version of each private account can be used in any execution.
+
+#### Programmability and Selective Privacy
+
+Our goal is to enable full programmability within this hybrid model, matching the flexibility and composability of public blockchains. Developers write and deploy programs in NSSA just as they would on any other blockchain. Privacy, along with the ability to execute programs involving any combination of public and private accounts, is handled entirely at the protocol level and available out of the box for all programs. From the program's perspective, all accounts are indistinguishable. This abstraction allows developers to focus purely on business logic, while the system transparently enforces privacy and consistency guarantees.
+
+To the best of our knowledge, this approach is unique to Nescience. Other programmable blockchains with a focus on privacy typically adopt a developer-driven model for private execution, meaning that dApp logic must explicitly handle private inputs correctly. In contrast, Nescience handles privacy at the protocol level, so developers do not need to modify their programs—private and public accounts are treated uniformly, and privacy-preserving execution is available out of the box.
+
+#### Token Creation and Transfers (Example)
+
+**1. Token creation (public execution):**
+- Alice submits a transaction to execute the token program create function on-chain.
+- A new public token account is created, representing the token.
+- The minted tokens are recorded on-chain and fully visible on Alice's public account.
+
+**2. Transfer from public to private (local / privacy-preserving execution):**
+- Alice executes the token program transfer function locally, specifying a Bob's private account as recipient.
+- A ZKP of correct execution is generated.
+- The proof is submitted to the blockchain, and validator nodes verify it.
+- Alice's public account balance is modified accordingly.
+- Bob's private account and balance remain hidden, while the transfer is provably valid.
+
+**3. Transfer from private to public (local / privacy-preserving execution):**
+- Bob executes the token program transfer function locally, specifying a Charlie's public account as recipient.
+- A ZKP of correct execution is generated.
+- Bob's private account and balance still remain hidden.
+- Charlie's public account is modified with the new tokens added.
+
+**4. Transfer from public to public (public execution):**
+- Alice submits a transaction to execute the token program transfer function on-chain, specifying Charlie's public account as recipient.
+- The execution is handled on-chain without ZKPs involved.
+- Alice's and Charlie's accounts are modified according to the transaction.
+
+**Key points:**
+- The same token program is used in all executions.
+- The difference lies in execution mode: public executions update visible accounts on-chain, while private executions rely on ZKPs.
+- Validators only need to verify proofs for privacy-preserving transactions, keeping processing efficient.
+
+#### The Account Model
+
+To achieve both state separation and full programmability, NSSA adopts a stateless program model and a data layout similar to Solana's. Programs do not hold internal state; instead, all persistent data resides in accounts explicitly passed to the program during execution. This design enables fine-grained control over access and visibility while maintaining composability across public and private states.
+
+#### Execution Types
+
+Execution is divided into two fundamentally distinct types based on how they are processed: **public execution**, which is executed transparently on-chain, and **private execution**, which occurs off-chain. For private execution, the blockchain relies on ZKPs to verify the correctness of execution and ensure that all system invariants are preserved.
+
+Both public and private executions of the same program are enforced to use the same Risc0 VM bytecode. For public transactions, programs are executed directly on-chain like any standard RISC-V VM execution, without generating or verifying proofs. For privacy-preserving transactions, users generate Risc0 ZKPs of correct execution, and validator nodes only verify these proofs rather than re-executing the program. This design ensures that from a validator's perspective, public transactions are processed as quickly as any RISC-V–based VM, while verification of ZKPs keeps privacy-preserving transactions efficient as well. Additionally, the system naturally supports parallel execution similar to Solana, further increasing throughput. The main computational bottleneck for privacy-preserving transactions lies on the user side, in generating ZKPs.
+
+#### Resources
+
+- [IFT Research call](https://forum.vac.dev/t/ift-research-call-september-10th-2025-updates-on-the-development-of-nescience/566)
+- [Goals for Q4 Testnet](https://www.notion.so/State-separation-architecture-PoC-27a8f96fb65c80eb9fe7dbe0ee97843a?pvs=21)
+- [NSSA vs other privacy projects](https://www.notion.so/Privacy-projects-comparison-2688f96fb65c8096b694ecf7e4deca30?pvs=21)
+- [Choice of VM/zkVM](https://www.notion.so/Conclusion-on-the-chosen-VM-and-zkVM-for-LSSA-2318f96fb65c806a810ed1300f56992d?pvs=21)
+- [NSSA state model](https://www.notion.so/State-model-decision-2388f96fb65c80758b20c76de07b1fcc?pvs=21)
+- [NSSA v0.2 specs](https://www.notion.so/NSSA-v0-2-specifications-2848f96fb65c800c9818e6f66d9be8f2?pvs=21)
+- [NSSA sequencer specs](https://www.notion.so/Sequencer-specs-2428f96fb65c802da2bfea7b0b214ecb?pvs=21)
+- [NSSA sequencer code](https://www.notion.so/LSSA-sequencer-pseudocode-2508f96fb65c805e8859e047dffd6785?pvs=21)
+- [NSSA key protocol](https://www.notion.so/Concrete-key-protocol-specifications-23b8f96fb65c8011b488c8fe0d2f87ae?pvs=21)
+- [NSSA Token program design](https://www.notion.so/Token-program-design-2538f96fb65c80a1b4bdc4fd9dd162d7?pvs=21)
+- [NSSA cross program calls](https://www.notion.so/LSSA-cross-program-calls-Tail-call-model-proposal-extended-version-2838f96fb65c8096b3a2d390444193b6?pvs=21)
+- [NSSA AMM specs](https://www.notion.so/AMM-spec-28a8f96fb65c80bf93edde876c5a6932?pvs=21)
+- [Client-side proving benchmarks](https://www.notion.so/Client-side-proving-benchmarks-2a38f96fb65c80019e6cea87b0ff3331?pvs=21)
+- [Transactions processing performance](https://www.notion.so/Performance-tests-report-2968f96fb65c800bb96bd1a10fc95739?pvs=21)
+
+---
+
+## Aztec Network (Privacy-First Ethereum Rollup)
+
+*Aztec* is a Layer-2 zk-rollup on Ethereum that focuses on privacy. It is essentially an off-chain network where transactions are processed with encryption and then verified on Ethereum via ZKPs. Aztec uses a hybrid model combining UTXO-style notes with smart contract programmability. In Aztec's new design, an entire smart contract's state can be represented inside a UTXO (note) committed to the rollup.
+
+### Similarities to NSSA
+
+Both Aztec and NSSA support hybrid public/private execution. Aztec is often called the first hybrid ZK rollup because it plans to support normal public smart contract functions alongside private ones. This is analogous to NSSA's dual execution types since Aztec allows some contract calls to be public (for efficiency) and others to be private as needed. Both systems use a form of UTXO model for private assets: Aztec's internal notes system is akin to UTXOs, helping hide values and parties similar to NSSA's private state.
+
+### Key Differences
+
+- Aztec's privacy model is more developer-driven whereas NSSA's is user-driven. In Aztec, programmable privacy means dApp developers decide what parts of a contract are secret or public in the code. For example, a developer might design a confidential voting contract on Aztec where votes are hidden by default. By contrast, NSSA lets the user choose per transaction (public, private, shielded, deshielded), even within the same dApp. This gives NSSA greater flexibility: privacy isn't all-or-nothing at the application level, but adjustable by end-users as needs change.
+- Another difference is platform and security model: Aztec operates as an L2 rollup, inheriting Ethereum's security and consensus. NSSA is an L1 architecture (or an L2 framework deployable on any chain), which means it could run as a sovereign chain or as a rollup on various L1s.
+- Aztec's reliance on Ethereum means data availability and throughput are tied to Ethereum (all Aztec transactions ultimately settle on Ethereum), whereas NSSA could potentially be tailored for higher throughput by being its own chain or a rollup with dedicated data availability solutions.
+
+### Why NSSA Might Do Better
+
+- User empowerment and flexibility are NSSA's strong points. Unlike Aztec where privacy features are baked into the dApp by the developer, NSSA's selective privacy lets users decide the privacy level of each interaction. This could cater to a broader range of use-cases. For instance, casual users can default to transparency (for simplicity or lower cost) and only use privacy when needed, whereas power users or sensitive transactions can opt into full anonymity. Such flexibility can drive adoption by easing users in, rather than requiring everything be private from the start.
+- NSSA's public execution mode avoids ZKPs overhead when privacy isn't needed, giving it a performance edge in scenarios where full privacy is overkill. Aztec, on the other hand, is privacy-by-default within its rollup, which maximizes anonymity but means even simple transactions incur zk proving costs (Aztec is addressing this by mixing public contracts, but proofs are still central).
+- Finally, because NSSA can be deployed on any base chain, it is more ecosystem-agnostic. Projects don't have to leave their L1 to gain NSSA's capabilities. NSSA could run as a modular rollup attached to those ecosystems. Aztec is currently tied to Ethereum, so projects on other chains can't easily benefit from it without bridging.
+
+In summary, NSSA offers more adaptability: it can achieve privacy where needed while preserving transparency and efficiency elsewhere, which is a compelling advantage in terms of usability and integration.
+
+---
+
+## Aleo (Private Smart Contract L1)
+
+*Aleo* is a Layer-1 blockchain built from the ground up for private applications. It originates from the 2018 [ZEXE research paper](https://eprint.iacr.org/2018/962.pdf) (zero-knowledge execution), which first introduced the idea of decentralized private computation via a record model. Aleo uses **snarkVM** (its ZK-enabled virtual machine) and **snarkOS** (its ZK operating system backbone) to execute smart contracts with cryptographic privacy guarantees. Developers write programs in **Leo**, a Rust-inspired domain-specific language (DSL) that compiles to ZK circuits. Aleo supports both private state (encrypted records, analogous to UTXOs) and public state (on-chain mappings), giving developers the choice of visibility per data field.
+
+### Similarities to NSSA
+
+Both Aleo and NSSA are L1 systems designed for privacy-preserving programmable computation:
+
+- **Hybrid public/private state:** Both support coexistence of transparent and shielded state within the same application. Aleo programs can mix public mappings and private records; NSSA similarly allows public accounts and private accounts to participate in the same transaction.
+- **UTXO-like private model:** Aleo's record model (extended from the UTXO model) encrypts arbitrary application data and uses a nullifier set to prevent double-spending — structurally very similar to NSSA's private accounts, which use commitments and nullifiers to represent private state.
+- **ZKP-based execution:** Both rely on zero-knowledge proofs to verify private state transitions without revealing underlying data. Aleo uses zkSNARKs; NSSA uses Risc0 ZKPs.
+- **No trusted setup for core proofs:** Both aim to avoid relying on central parties to verify private execution.
+
+### Key Differences
+
+- **Developer-driven vs. protocol-level privacy:** In Aleo, privacy is explicit in the code. Developers must use the Leo language and explicitly annotate which inputs are `private` and which are `public`. NSSA, by contrast, handles privacy entirely at the protocol level — developers write standard programs and all accounts (public or private) are treated uniformly. Privacy is not a developer concern in NSSA; it's a user choice at transaction time.
+- **Custom DSL vs. general-purpose VM:** Aleo requires the Leo programming language, a purpose-built DSL. This raises the barrier to entry for developers who must learn new tooling and mental models. NSSA targets a general-purpose RISC-V VM (via Risc0), meaning developers can in principle use any language that compiles to RISC-V, significantly lowering onboarding friction.
+- **L1 only vs. architecture-agnostic:** Aleo is a standalone L1 chain. NSSA is an architecture that can be instantiated as an L1 or deployed as a rollup on any existing chain, making it far more flexible for ecosystem integration.
+- **Proof generation burden:** In Aleo, all private transactions require client-side ZK proof generation using its custom circuit backend. NSSA also has client-side proving for private execution, but its public execution path avoids this overhead entirely — offering a smooth performance gradient based on actual privacy needs.
+
+### Why NSSA Might Do Better
+
+- **No new language to learn:** NSSA's protocol-level privacy means developers can write applications exactly as they would on any other platform, without learning Leo or reasoning about circuit constraints. Privacy is automatic and transparent. This could dramatically accelerate developer adoption compared to Aleo's required DSL.
+- **User-driven flexibility:** Aleo's privacy is determined at the code level — the developer chooses what is private. NSSA lets the *user* decide per interaction, even within the same application. This empowers end-users and makes NSSA more adaptable to real-world use cases where privacy needs vary per context (e.g., a user making a public corporate payment vs. a confidential personal one in the same dApp).
+- **Performance when privacy isn't needed:** NSSA's public execution path processes transactions on-chain without ZKP overhead, just like a standard RISC-V VM. Aleo still incurs ZK proving costs for private records even for simple operations. For applications that only occasionally need privacy, NSSA's hybrid approach is more efficient.
+- **Ecosystem flexibility:** Aleo is a sovereign L1 with its own consensus (AleoBFT), validator set, and native token. This means projects on Ethereum, Solana, or other chains cannot directly leverage Aleo's privacy without bridging. NSSA can theoretically be deployed as a rollup *on top of* those ecosystems, bringing protocol-level privacy to existing communities without requiring migration.
+
+In summary, Aleo is a well-engineered privacy L1, but its developer-centric model and DSL requirement create friction. NSSA's approach — uniform accounts, protocol-level privacy, and architecture agnosticism — positions it as a more accessible and adaptable alternative for both developers and end-users.
 
 ---
 
