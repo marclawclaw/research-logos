@@ -214,6 +214,30 @@ In summary, NSSA offers more adaptability: it can achieve privacy where needed w
 
 ---
 
+## Mina Protocol (Succinct Blockchain with zkApps)
+
+*Mina protocol* is an L1 blockchain known for its tiny blockchain size (~22 KB) and use of recursive zk-SNARKs to maintain a constant-sized proof of the network state. Privacy in Mina comes into play through zkApps. Unlike Aleo, Mina's base ledger is account-based and transparent: account balances and addresses are public, and transactions are visible on-chain. Privacy is achieved at the application layer by incorporating proofs in transactions. For example, a Mina zkApp could let a user prove they possess certain credentials or attributes without disclosing them, or prove that a secret computation yielded a certain result, all within a transaction that updates the on-chain state minimally.
+
+### Similarities to NSSA
+
+- Both Mina and NSSA use ZKPs to enable privacy at the application level. Mina's zkApps can hide certain transaction details while proving validity, similar to how NSSA's private transactions use ZKPs.
+- Both support hybrid models: Mina has a transparent base layer with optional privacy at the app level, while NSSA has public and private execution modes within the same architecture.
+- Both aim for scalability through ZKPs — Mina's recursive proofs keep the chain small, while NSSA's off-chain execution with on-chain verification reduces on-chain computation.
+
+### Key Differences
+
+- Mina's privacy is opt-in at the application level (developers must build zkApps), whereas NSSA provides privacy at the protocol level, making it available for any transaction without special developer effort.
+- Mina uses an account-based model for its transparent state, while NSSA uses a UTXO-like model for private state (similar to Aztec/Aleo).
+- Mina's unique value proposition is constant chain size (~22KB), which is a different design goal from NSSA's state separation architecture.
+
+### Why NSSA Might Do Better
+
+- NSSA's protocol-level privacy means every user automatically gets privacy benefits without requiring developers to build custom zk circuits. This lowers the barrier to entry for privacy-preserving applications.
+- NSSA's hybrid public/private execution model is more flexible than Mina's app-layer approach, allowing users to switch between public and private modes without changing applications.
+- NSSA's selective privacy model provides better UX for gradual adoption, as users can start with transparent transactions and opt into privacy as needed.
+
+---
+
 ## Tokenomics
 
 - Full tokenomics framework established: August 2025
