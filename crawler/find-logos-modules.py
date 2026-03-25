@@ -20,6 +20,10 @@ SEARCH_SIGNALS = [
     ("logos-cpp-sdk", "code"),
     ("mkLogosModule", "code"),
     ("Q_INTERFACES(PluginInterface) Logos", "code"),
+    ("LOGOS_CPP_SDK_ROOT", "code"),
+    ("LOGOS_MODULE_ROOT", "code"),
+    ("logos-liblogos", "code"),
+    ("LOGOS_LIBLOGOS_ROOT", "code"),
 ]
 
 def gh_api(path, params=None):
@@ -140,23 +144,38 @@ def main():
             })
         time.sleep(1)
 
+    # Merge with existing results
+    out_path = "/home/marclaw/src/marclawclaw/research-logos/crawler/found-modules.json"
+    import os
+    existing_by_name = {}
+    if os.path.exists(out_path):
+        with open(out_path) as f:
+            existing_data = json.load(f)
+        for r in existing_data.get("repos", []):
+            existing_by_name[r["full_name"]] = r
+
+    # Merge: new results override existing, but keep old if not re-found
+    for r in enriched:
+        existing_by_name[r["full_name"]] = r
+
+    merged = list(existing_by_name.values())
+
     # Save results
     output = {
         "crawled_at": run_time,
-        "total_repos": len(enriched),
-        "repos": enriched
+        "total_repos": len(merged),
+        "repos": merged
     }
 
-    out_path = "/home/marclaw/src/marclawclaw/research-logos/crawler/found-modules.json"
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\nSaved {len(enriched)} repos to {out_path}")
+    print(f"\nSaved {len(merged)} repos to {out_path} (was {len(enriched)} new, merged total)")
 
     # Write run log
     log_path = "/home/marclaw/src/marclawclaw/research-logos/crawler/run-log.md"
     with open(log_path, "a") as f:
         f.write(f"\n## [{run_time}] Logos Module Crawl — ok\n")
-        f.write(f"- Repos found: {len(enriched)}\n")
+        f.write(f"- Repos found (new run): {len(enriched)}, merged total: {len(merged)}\n")
         f.write(f"- Signals searched: {len(SEARCH_SIGNALS)}\n")
         for entry in log_entries:
             f.write(f"{entry}\n")

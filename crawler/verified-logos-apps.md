@@ -11,6 +11,7 @@ _Last updated: 2026-03-25_
 | logos-workflow-engine | [corpetty/logos-workflow-engine](https://github.com/corpetty/logos-workflow-engine) | corpetty | Native Logos module for headless workflow execution — takes a serialized workflow graph, performs topological DAG sorting, and dispatches each node through LogosAPI in dependency order. | 2026-03-20 | 2026-03-25 |
 | logos-workflow-scheduler | [corpetty/logos-workflow-scheduler](https://github.com/corpetty/logos-workflow-scheduler) | corpetty | Native Logos module that manages cron/webhook triggers for deployed workflows, triggering the workflow engine on schedule. Part of the Logos Legos v2 native architecture. | 2026-03-20 | 2026-03-25 |
 | logos-storage-app-skeleton | [logos-storage/logos-storage-app-skeleton](https://github.com/logos-storage/logos-storage-app-skeleton) | logos-storage | CLI application skeleton for Logos Storage, using Logos Core — companion to the Logos Storage Module API tutorial, providing an `app_main` entry point with the `LogosModules` object and Qt synchronization primitives. | 2026-03-24 | 2026-03-25 |
+| logos-video-hotspot | [marclawclaw/logos-video-hotspot](https://github.com/marclawclaw/logos-video-hotspot) | marclawclaw (fryorcraken) | Qt/CLI app that creates a local video streaming hotspot using Logos storage and delivery modules, with a Qt GUI for managing streams | 2026-03-23 | 2026-03-25 |
 
 ---
 
@@ -84,3 +85,4 @@ The following 64 repos were found by the crawler (via `LogosResult` signal only)
 | jazminewrooman/PrutechGMX | unrelated |
 | vladzaharia/apollo | unrelated |
 | zehnm/integration.kodi | Kodi-integration (empty/unverified — `Q_INTERFACES(PluginInterface) Logos` signal but repo is empty) |
+| status-im/infra-role-logos-node | official-Status-infra (Ansible role for deploying Logos nodes, Status ecosystem team — not community) |

@@ -1,6 +1,6 @@
 {
-  "crawled_at": "2026-03-25 05:24 UTC",
-  "total_repos": 72,
+  "crawled_at": "2026-03-25 08:57 UTC",
+  "total_repos": 73,
   "repos": [
     {
       "full_name": "xAlisher/logos-notes",
@@ -15,7 +15,9 @@
         "LogosResult",
         "logos-cpp-sdk",
         "mkLogosModule",
-        "Q_INTERFACES(PluginInterface) Logos"
+        "Q_INTERFACES(PluginInterface) Logos",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos"
       ]
     },
     {
@@ -30,7 +32,10 @@
         "LogosAPIClient",
         "LogosResult",
         "logos-cpp-sdk",
-        "mkLogosModule"
+        "mkLogosModule",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos",
+        "LOGOS_LIBLOGOS_ROOT"
       ]
     },
     {
@@ -61,8 +66,8 @@
       "full_name": "midday-ai/midday",
       "description": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
       "language": "TypeScript",
-      "pushed_at": "2026-03-24T22:38:04Z",
-      "stargazers_count": 14120,
+      "pushed_at": "2026-03-25T08:56:19Z",
+      "stargazers_count": 14121,
       "html_url": "https://github.com/midday-ai/midday",
       "owner": "midday-ai",
       "signals": [
@@ -103,7 +108,10 @@
       "owner": "logos-storage",
       "signals": [
         "LogosResult",
-        "logos-cpp-sdk"
+        "logos-cpp-sdk",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos",
+        "LOGOS_LIBLOGOS_ROOT"
       ]
     },
     {
@@ -242,7 +250,7 @@
       "full_name": "lenselinksander-coder/PRSYS-TaoGate-v10",
       "description": "Governance AI flight simulator OS",
       "language": "TypeScript",
-      "pushed_at": "2026-03-24T22:35:12Z",
+      "pushed_at": "2026-03-25T06:34:05Z",
       "stargazers_count": 1,
       "html_url": "https://github.com/lenselinksander-coder/PRSYS-TaoGate-v10",
       "owner": "lenselinksander-coder",
@@ -314,7 +322,7 @@
       "full_name": "babylonlabs-io/babylon-toolkit",
       "description": "Babylon\u2019s frontend monorepo contains everything you need to build a world-class staking dApp.",
       "language": "TypeScript",
-      "pushed_at": "2026-03-25T04:11:34Z",
+      "pushed_at": "2026-03-25T08:23:12Z",
       "stargazers_count": 8,
       "html_url": "https://github.com/babylonlabs-io/babylon-toolkit",
       "owner": "babylonlabs-io",
@@ -333,7 +341,8 @@
       "signals": [
         "LogosResult",
         "logos-cpp-sdk",
-        "mkLogosModule"
+        "mkLogosModule",
+        "logos-liblogos"
       ]
     },
     {
@@ -472,7 +481,7 @@
       "full_name": "juliocesarmiranda893-ops/topsun-crm",
       "description": null,
       "language": "TypeScript",
-      "pushed_at": "2026-03-25T05:19:25Z",
+      "pushed_at": "2026-03-25T05:40:45Z",
       "stargazers_count": 0,
       "html_url": "https://github.com/juliocesarmiranda893-ops/topsun-crm",
       "owner": "juliocesarmiranda893-ops",
@@ -532,7 +541,7 @@
       "full_name": "nine9188/-sports-web-community",
       "description": null,
       "language": "TypeScript",
-      "pushed_at": "2026-03-25T04:39:23Z",
+      "pushed_at": "2026-03-25T07:21:18Z",
       "stargazers_count": 0,
       "html_url": "https://github.com/nine9188/-sports-web-community",
       "owner": "nine9188",
@@ -568,7 +577,7 @@
       "full_name": "Cross-Atlantic-Software/collegefinder",
       "description": "For College Finder web app",
       "language": "TypeScript",
-      "pushed_at": "2026-03-24T20:12:20Z",
+      "pushed_at": "2026-03-25T06:09:22Z",
       "stargazers_count": 1,
       "html_url": "https://github.com/Cross-Atlantic-Software/collegefinder",
       "owner": "Cross-Atlantic-Software",
@@ -826,7 +835,10 @@
       "owner": "corpetty",
       "signals": [
         "logos-cpp-sdk",
-        "mkLogosModule"
+        "mkLogosModule",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos",
+        "LOGOS_LIBLOGOS_ROOT"
       ]
     },
     {
@@ -839,7 +851,9 @@
       "owner": "xAlisher",
       "signals": [
         "logos-cpp-sdk",
-        "Q_INTERFACES(PluginInterface) Logos"
+        "Q_INTERFACES(PluginInterface) Logos",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos"
       ]
     },
     {
@@ -852,7 +866,10 @@
       "owner": "corpetty",
       "signals": [
         "logos-cpp-sdk",
-        "mkLogosModule"
+        "mkLogosModule",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos",
+        "LOGOS_LIBLOGOS_ROOT"
       ]
     },
     {
@@ -865,7 +882,10 @@
       "owner": "corpetty",
       "signals": [
         "logos-cpp-sdk",
-        "mkLogosModule"
+        "mkLogosModule",
+        "LOGOS_CPP_SDK_ROOT",
+        "logos-liblogos",
+        "LOGOS_LIBLOGOS_ROOT"
       ]
     },
     {
@@ -878,6 +898,18 @@
       "owner": "zehnm",
       "signals": [
         "Q_INTERFACES(PluginInterface) Logos"
+      ]
+    },
+    {
+      "full_name": "status-im/infra-role-logos-node",
+      "description": null,
+      "language": "Jinja",
+      "pushed_at": "2026-03-12T13:15:33Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/status-im/infra-role-logos-node",
+      "owner": "status-im",
+      "signals": [
+        "logos-liblogos"
       ]
     }
   ]
