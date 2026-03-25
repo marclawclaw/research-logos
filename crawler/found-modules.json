@@ -1,0 +1,884 @@
+{
+  "crawled_at": "2026-03-25 05:24 UTC",
+  "total_repos": 72,
+  "repos": [
+    {
+      "full_name": "xAlisher/logos-notes",
+      "description": "Based on https://github.com/logos-co/ideas/issues/13",
+      "language": "C++",
+      "pushed_at": "2026-03-19T20:37:34Z",
+      "stargazers_count": 5,
+      "html_url": "https://github.com/xAlisher/logos-notes",
+      "owner": "xAlisher",
+      "signals": [
+        "LogosAPIClient",
+        "LogosResult",
+        "logos-cpp-sdk",
+        "mkLogosModule",
+        "Q_INTERFACES(PluginInterface) Logos"
+      ]
+    },
+    {
+      "full_name": "corpetty/logos-workflow-registry",
+      "description": null,
+      "language": "C++",
+      "pushed_at": "2026-03-20T14:57:47Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/corpetty/logos-workflow-registry",
+      "owner": "corpetty",
+      "signals": [
+        "LogosAPIClient",
+        "LogosResult",
+        "logos-cpp-sdk",
+        "mkLogosModule"
+      ]
+    },
+    {
+      "full_name": "devtorque/earningswidget",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-06-10T04:49:13Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/devtorque/earningswidget",
+      "owner": "devtorque",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "OshanKHZ/bitbadges",
+      "description": "8-bit style badge generator API for README files. Create pixel art badges with custom colors, logos and text.",
+      "language": "TypeScript",
+      "pushed_at": "2025-12-03T02:57:54Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/OshanKHZ/bitbadges",
+      "owner": "OshanKHZ",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "midday-ai/midday",
+      "description": "Invoicing, Time tracking, File reconciliation, Storage, Financial Overview & your own Assistant made for Freelancers",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-24T22:38:04Z",
+      "stargazers_count": 14120,
+      "html_url": "https://github.com/midday-ai/midday",
+      "owner": "midday-ai",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "ManzanoHerchelle/parish-church-system",
+      "description": null,
+      "language": "PHP",
+      "pushed_at": "2026-01-06T12:50:16Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/ManzanoHerchelle/parish-church-system",
+      "owner": "ManzanoHerchelle",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "adoslabsproject-gif/nothumanallowed",
+      "description": "Security-first platform for AI agents. 38 specialized agents, 15 AI-powered extensions, zero-knowledge multi-agent orchestration. SENTINEL WAF, Ed25519 auth, 2.6M grounding facts.",
+      "language": "JavaScript",
+      "pushed_at": "2026-03-21T12:00:44Z",
+      "stargazers_count": 73,
+      "html_url": "https://github.com/adoslabsproject-gif/nothumanallowed",
+      "owner": "adoslabsproject-gif",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "logos-storage/logos-storage-app-skeleton",
+      "description": null,
+      "language": "Nix",
+      "pushed_at": "2026-03-24T16:43:56Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/logos-storage/logos-storage-app-skeleton",
+      "owner": "logos-storage",
+      "signals": [
+        "LogosResult",
+        "logos-cpp-sdk"
+      ]
+    },
+    {
+      "full_name": "nicholasandyweb/bootflare",
+      "description": null,
+      "language": "HTML",
+      "pushed_at": "2026-03-02T11:06:19Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/nicholasandyweb/bootflare",
+      "owner": "nicholasandyweb",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "rh0kzy/EdenWebSite",
+      "description": null,
+      "language": "JavaScript",
+      "pushed_at": "2025-12-19T23:43:38Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/rh0kzy/EdenWebSite",
+      "owner": "rh0kzy",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Alastairian/Lando_ian-ips",
+      "description": null,
+      "language": "Python",
+      "pushed_at": "2025-07-05T19:14:22Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Alastairian/Lando_ian-ips",
+      "owner": "Alastairian",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "unimaginative-artist/SOMA",
+      "description": "Local-first AI operating system. Persistent memory, 178 cognitive modules, multi-model reasoning. Runs on your   hardware, not theirs. I am releasing SOMA to the world as I have reached the technical ceiling of what I am capable of so treat her good and enjoy.",
+      "language": "JavaScript",
+      "pushed_at": "2026-03-18T21:52:01Z",
+      "stargazers_count": 11,
+      "html_url": "https://github.com/unimaginative-artist/SOMA",
+      "owner": "unimaginative-artist",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "denniske/winget-ui",
+      "description": "User Interface for winget",
+      "language": "TypeScript",
+      "pushed_at": "2021-06-05T10:58:24Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/denniske/winget-ui",
+      "owner": "denniske",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "kalou906/AKIG",
+      "description": "Syst\u00e8me de gestion immobili\u00e8re AKIG - Guin\u00e9e",
+      "language": "JavaScript",
+      "pushed_at": "2025-11-19T21:13:29Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/kalou906/AKIG",
+      "owner": "kalou906",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Apezdr/nextjs-stream",
+      "description": "NextJS 16 Frontend application for Media Server application using NextAuth.",
+      "language": "JavaScript",
+      "pushed_at": "2026-03-02T01:11:08Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/Apezdr/nextjs-stream",
+      "owner": "Apezdr",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Xignite/swaggerhub",
+      "description": null,
+      "language": null,
+      "pushed_at": "2026-01-26T09:02:16Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Xignite/swaggerhub",
+      "owner": "Xignite",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Yuva-Nagasai/Flowing-into-the-future",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-12-06T09:57:46Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/Yuva-Nagasai/Flowing-into-the-future",
+      "owner": "Yuva-Nagasai",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "InfiniteRasa/Rasa.NET",
+      "description": "A C# version of the Infinite Rasa project.",
+      "language": "C#",
+      "pushed_at": "2023-12-27T16:45:23Z",
+      "stargazers_count": 70,
+      "html_url": "https://github.com/InfiniteRasa/Rasa.NET",
+      "owner": "InfiniteRasa",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "aziwar/AZ-Digital-Hub",
+      "description": "Digital hub portfolio \u2014 TypeScript, Next.js, deployed on Vercel",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-21T15:31:14Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/aziwar/AZ-Digital-Hub",
+      "owner": "aziwar",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "lenselinksander-coder/PRSYS-TaoGate-v10",
+      "description": "Governance AI flight simulator OS",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-24T22:35:12Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/lenselinksander-coder/PRSYS-TaoGate-v10",
+      "owner": "lenselinksander-coder",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "CenterBLC/N1904",
+      "description": "Text-Fabric dataset of the Greek New Testament, based on the Nestle 1904 (7th printing) edition.",
+      "language": "HCL",
+      "pushed_at": "2026-03-20T08:50:10Z",
+      "stargazers_count": 7,
+      "html_url": "https://github.com/CenterBLC/N1904",
+      "owner": "CenterBLC",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "saulocantanhede/tfgreek2",
+      "description": "Text Fabric conversion from Greek New Testament text",
+      "language": "HCL",
+      "pushed_at": "2024-09-20T13:07:45Z",
+      "stargazers_count": 2,
+      "html_url": "https://github.com/saulocantanhede/tfgreek2",
+      "owner": "saulocantanhede",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "tripplej33/AmpedFieldOps",
+      "description": "Building a free to use service based business managment software",
+      "language": "TypeScript",
+      "pushed_at": "2026-01-19T07:31:37Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/tripplej33/AmpedFieldOps",
+      "owner": "tripplej33",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "mclendening/EverIntent-smart-sites",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-15T20:43:58Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/mclendening/EverIntent-smart-sites",
+      "owner": "mclendening",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "MarcIlunga/driving_coach",
+      "description": null,
+      "language": "HTML",
+      "pushed_at": "2017-03-19T16:30:08Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/MarcIlunga/driving_coach",
+      "owner": "MarcIlunga",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "babylonlabs-io/babylon-toolkit",
+      "description": "Babylon\u2019s frontend monorepo contains everything you need to build a world-class staking dApp.",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-25T04:11:34Z",
+      "stargazers_count": 8,
+      "html_url": "https://github.com/babylonlabs-io/babylon-toolkit",
+      "owner": "babylonlabs-io",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "corpetty/logos-legos",
+      "description": "Visual workflow builder for Logos Core modules \u2014 ComfyUI-style node editor for composing protocol operations into executable pipelines",
+      "language": "JavaScript",
+      "pushed_at": "2026-03-18T12:29:30Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/corpetty/logos-legos",
+      "owner": "corpetty",
+      "signals": [
+        "LogosResult",
+        "logos-cpp-sdk",
+        "mkLogosModule"
+      ]
+    },
+    {
+      "full_name": "KASPACOM/kaspacom-web-wallet",
+      "description": "A wallet for Kaspa",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-11T08:26:25Z",
+      "stargazers_count": 8,
+      "html_url": "https://github.com/KASPACOM/kaspacom-web-wallet",
+      "owner": "KASPACOM",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "ErikDevCode/BackendAJE.Api",
+      "description": null,
+      "language": "C#",
+      "pushed_at": "2025-07-26T13:46:35Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/ErikDevCode/BackendAJE.Api",
+      "owner": "ErikDevCode",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "x-dash-io/AI-Genius-Lab",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-02-27T20:20:39Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/x-dash-io/AI-Genius-Lab",
+      "owner": "x-dash-io",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "New-Vision-Creatives/NVC-WEBSITE",
+      "description": "SITE WEB DE L'ENTREPRISE ",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-04T10:35:25Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/New-Vision-Creatives/NVC-WEBSITE",
+      "owner": "New-Vision-Creatives",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "ximu3/kisaki",
+      "description": "A multifunctional media management project designed to provide a unified user interface and database model to record, manage, build, sync, and showcase your media collection and memories.",
+      "language": "Vue",
+      "pushed_at": "2026-03-22T14:04:08Z",
+      "stargazers_count": 18,
+      "html_url": "https://github.com/ximu3/kisaki",
+      "owner": "ximu3",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "adornodavid/HerbaxCosteo",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-20T14:39:38Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/adornodavid/HerbaxCosteo",
+      "owner": "adornodavid",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "jdmlcloud/OnPointAdmin",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-09-25T16:22:01Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/jdmlcloud/OnPointAdmin",
+      "owner": "jdmlcloud",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "adnansamirswe/UU_COVER_PAGE",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-12T14:37:49Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/adnansamirswe/UU_COVER_PAGE",
+      "owner": "adnansamirswe",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Karthik1404-h/Budget-bot",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-12-22T05:41:53Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Karthik1404-h/Budget-bot",
+      "owner": "Karthik1404-h",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "jjmaxwell4/xignite-swagger",
+      "description": null,
+      "language": "Python",
+      "pushed_at": "2023-09-15T02:11:18Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/jjmaxwell4/xignite-swagger",
+      "owner": "jjmaxwell4",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "czd890/xignite-swaggerhub",
+      "description": null,
+      "language": null,
+      "pushed_at": "2023-05-29T10:06:32Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/czd890/xignite-swaggerhub",
+      "owner": "czd890",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "juliocesarmiranda893-ops/topsun-crm",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-25T05:19:25Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/juliocesarmiranda893-ops/topsun-crm",
+      "owner": "juliocesarmiranda893-ops",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "harujagdl/panel-haruja-TN--v2",
+      "description": null,
+      "language": "HTML",
+      "pushed_at": "2026-03-25T04:55:18Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/harujagdl/panel-haruja-TN--v2",
+      "owner": "harujagdl",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "morpheusxx/MediaPortal-LogoManager",
+      "description": "MediaPortal LogoManager provides a versatile library to download, process and manage channel logos",
+      "language": "C#",
+      "pushed_at": "2022-09-12T11:47:58Z",
+      "stargazers_count": 3,
+      "html_url": "https://github.com/morpheusxx/MediaPortal-LogoManager",
+      "owner": "morpheusxx",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "ASPaes/aspdoctorsaas",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-25T04:43:16Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/ASPaes/aspdoctorsaas",
+      "owner": "ASPaes",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Macakoloko/p4ms11te",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-05-16T07:12:49Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/Macakoloko/p4ms11te",
+      "owner": "Macakoloko",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "nine9188/-sports-web-community",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-25T04:39:23Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/nine9188/-sports-web-community",
+      "owner": "nine9188",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Snassy-icp/swaprunner",
+      "description": "On-Chain DEX Aggregator",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-05T13:16:34Z",
+      "stargazers_count": 3,
+      "html_url": "https://github.com/Snassy-icp/swaprunner",
+      "owner": "Snassy-icp",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "EdwardYambasu12/Git",
+      "description": null,
+      "language": "JavaScript",
+      "pushed_at": "2025-05-26T12:01:21Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/EdwardYambasu12/Git",
+      "owner": "EdwardYambasu12",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Cross-Atlantic-Software/collegefinder",
+      "description": "For College Finder web app",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-24T20:12:20Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/Cross-Atlantic-Software/collegefinder",
+      "owner": "Cross-Atlantic-Software",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "risefootballagency/fuelforfootball",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-24T21:39:10Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/risefootballagency/fuelforfootball",
+      "owner": "risefootballagency",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "Hellares/backend",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-23T03:44:16Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/Hellares/backend",
+      "owner": "Hellares",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "AlexandriaDAO/lbry.fun",
+      "description": "Token Launchpad for Alexandrian Tokenomics",
+      "language": "Rust",
+      "pushed_at": "2025-11-12T11:59:09Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/AlexandriaDAO/lbry.fun",
+      "owner": "AlexandriaDAO",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "CristianH2/Proyecto-DentalNova",
+      "description": "Plataforma de Gestion de Citas para una Clinica Dental",
+      "language": "C#",
+      "pushed_at": "2026-02-21T13:30:31Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/CristianH2/Proyecto-DentalNova",
+      "owner": "CristianH2",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "JesusAntonioEscobedoRamon/NUTRIWEB6.0",
+      "description": null,
+      "language": "JavaScript",
+      "pushed_at": "2026-03-14T02:50:02Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/JesusAntonioEscobedoRamon/NUTRIWEB6.0",
+      "owner": "JesusAntonioEscobedoRamon",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "cesar050/Campeonato",
+      "description": "Proyecto para la gestion de un campeonato barrial ",
+      "language": "HTML",
+      "pushed_at": "2026-02-06T15:36:16Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/cesar050/Campeonato",
+      "owner": "cesar050",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "nickhaidukou/leon-init",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-05T21:22:00Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/nickhaidukou/leon-init",
+      "owner": "nickhaidukou",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "najmus-sakib-hossain/WEBSITE",
+      "description": "DX WEBSITE",
+      "language": "TypeScript",
+      "pushed_at": "2026-02-27T23:11:45Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/najmus-sakib-hossain/WEBSITE",
+      "owner": "najmus-sakib-hossain",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "vortechpe/ajebackend",
+      "description": null,
+      "language": "C#",
+      "pushed_at": "2025-12-26T22:15:41Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/vortechpe/ajebackend",
+      "owner": "vortechpe",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "LOHITH5506H/Budget-bot",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-12-21T18:25:06Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/LOHITH5506H/Budget-bot",
+      "owner": "LOHITH5506H",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "maria162003/clinikdent-v2-0",
+      "description": "Sistema completo de gesti\u00f3n cl\u00ednica odontol\u00f3gica - Node.js + MySQL + Bootstrap",
+      "language": "JavaScript",
+      "pushed_at": "2025-12-11T16:59:10Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/maria162003/clinikdent-v2-0",
+      "owner": "maria162003",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "aavilacxc/aria_prod_actual",
+      "description": null,
+      "language": "Blade",
+      "pushed_at": "2025-04-03T05:55:19Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/aavilacxc/aria_prod_actual",
+      "owner": "aavilacxc",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "josecarmengonzalezmata/NutriUweb",
+      "description": null,
+      "language": "JavaScript",
+      "pushed_at": "2026-03-24T22:03:41Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/josecarmengonzalezmata/NutriUweb",
+      "owner": "josecarmengonzalezmata",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "mtrejo30/CoronaSanitarios",
+      "description": null,
+      "language": "C#",
+      "pushed_at": "2016-02-16T00:34:24Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/mtrejo30/CoronaSanitarios",
+      "owner": "mtrejo30",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "danielgomezpascual/request_mobility",
+      "description": null,
+      "language": "Kotlin",
+      "pushed_at": "2026-02-11T12:01:44Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/danielgomezpascual/request_mobility",
+      "owner": "danielgomezpascual",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "WerWolv/libsteam",
+      "description": "Simple C++ library to interact with Steam client file formats and the Steam Deck",
+      "language": "C++",
+      "pushed_at": "2022-03-23T22:19:27Z",
+      "stargazers_count": 14,
+      "html_url": "https://github.com/WerWolv/libsteam",
+      "owner": "WerWolv",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "TJ-Frederick/TheologAI",
+      "description": "Bible and theological study MCP server",
+      "language": "TypeScript",
+      "pushed_at": "2026-03-04T02:20:21Z",
+      "stargazers_count": 6,
+      "html_url": "https://github.com/TJ-Frederick/TheologAI",
+      "owner": "TJ-Frederick",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "vaneebentos/Catalogo-backend",
+      "description": null,
+      "language": "Java",
+      "pushed_at": "2023-10-26T22:55:11Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/vaneebentos/Catalogo-backend",
+      "owner": "vaneebentos",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "jazminewrooman/PrutechGMX",
+      "description": null,
+      "language": "C#",
+      "pushed_at": "2025-06-13T14:24:08Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/jazminewrooman/PrutechGMX",
+      "owner": "jazminewrooman",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "vladzaharia/apollo",
+      "description": null,
+      "language": "TypeScript",
+      "pushed_at": "2025-09-04T03:30:59Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/vladzaharia/apollo",
+      "owner": "vladzaharia",
+      "signals": [
+        "LogosResult"
+      ]
+    },
+    {
+      "full_name": "corpetty/logos-workflow-canvas",
+      "description": null,
+      "language": "C++",
+      "pushed_at": "2026-03-20T14:57:44Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/corpetty/logos-workflow-canvas",
+      "owner": "corpetty",
+      "signals": [
+        "logos-cpp-sdk",
+        "mkLogosModule"
+      ]
+    },
+    {
+      "full_name": "xAlisher/keycard-basecamp",
+      "description": "Keycard smartcard authentication module for Logos Basecamp",
+      "language": "C++",
+      "pushed_at": "2026-03-24T13:18:35Z",
+      "stargazers_count": 1,
+      "html_url": "https://github.com/xAlisher/keycard-basecamp",
+      "owner": "xAlisher",
+      "signals": [
+        "logos-cpp-sdk",
+        "Q_INTERFACES(PluginInterface) Logos"
+      ]
+    },
+    {
+      "full_name": "corpetty/logos-workflow-scheduler",
+      "description": null,
+      "language": "C++",
+      "pushed_at": "2026-03-20T14:57:48Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/corpetty/logos-workflow-scheduler",
+      "owner": "corpetty",
+      "signals": [
+        "logos-cpp-sdk",
+        "mkLogosModule"
+      ]
+    },
+    {
+      "full_name": "corpetty/logos-workflow-engine",
+      "description": null,
+      "language": "C++",
+      "pushed_at": "2026-03-20T14:57:45Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/corpetty/logos-workflow-engine",
+      "owner": "corpetty",
+      "signals": [
+        "logos-cpp-sdk",
+        "mkLogosModule"
+      ]
+    },
+    {
+      "full_name": "zehnm/integration.kodi",
+      "description": null,
+      "language": "C++",
+      "pushed_at": "2021-03-04T07:44:33Z",
+      "stargazers_count": 0,
+      "html_url": "https://github.com/zehnm/integration.kodi",
+      "owner": "zehnm",
+      "signals": [
+        "Q_INTERFACES(PluginInterface) Logos"
+      ]
+    }
+  ]
+}
