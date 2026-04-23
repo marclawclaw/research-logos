@@ -2,6 +2,12 @@
 
 Knowledge database for the Logos technology stack — a unified ecosystem for decentralized, privacy-preserving applications.
 
+## Logos Modules and SDK
+
+| Note | Description |
+|------|-------------|
+| [[logos-module-builder]] | Logos Module Builder: Nix flake library for building Logos modules. Covers `lgx` vs `lgx-portable` distinction, module types, build pipeline, and integration with logos-basecamp. |
+
 ## Core Components
 
 | Note | Description |
