@@ -13,6 +13,42 @@ A Logos module is a plugin that implements the `PluginInterface` and is managed 
 
 The module builder is used by virtually all Logos modules in the ecosystem, including the package manager, storage, delivery, accounts, and chat modules.
 
+## Qt plugins, not QML plugins
+
+Logos modules are **Qt plugins** (C++ plugin architecture), not QML plugins. This distinction matters.
+
+A **Qt plugin** is a compiled C++ shared library (`.so`/`.dylib`) that implements a Qt plugin interface. It is discovered and loaded at runtime via `QPluginLoader`. The plugin system uses:
+
+- `Q_OBJECT` macro — enables Qt's meta-object system (signals, slots, introspection)
+- `Q_PLUGIN_METADATA(IID ... FILE "metadata.json")` — declares the class as a Qt plugin with a plugin interface ID
+- `Q_DECLARE_INTERFACE(PluginInterface, ...)` — registers the interface with Qt's plugin system
+- `Q_INVOKABLE` — marks methods as callable from Qt's runtime introspection
+
+A **QML plugin** is a different thing: it registers QML types with a QML engine via `qmlRegisterType()` so they can be used in QML declarative UI files. QML plugins are written in QML/JS and loaded by the QML runtime, not by `QPluginLoader`.
+
+The concrete evidence from `logos-delivery-module` (a real production module):
+
+```cpp
+class DeliveryModulePlugin : public QObject, public DeliveryModuleInterface
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID DeliveryModuleInterface_iid FILE "metadata.json")
+    Q_INTERFACES(DeliveryModuleInterface PluginInterface)
+    // ... Q_INVOKABLE methods
+};
+```
+
+And `logos_module.h` (the module loading library):
+
+```cpp
+QPluginLoader* m_loader = nullptr;
+// Loaded via: QPluginLoader::load() → qobject_cast<T*>(instance)
+```
+
+The `logos_module` static library (`logos-co/logos-module`) wraps this pattern: it finds plugins by scanning module directories, loads them via `QPluginLoader`, and provides introspection APIs to query methods and metadata without instantiating the plugin.
+
+**The `ui_qml` module type** is the one exception that can involve QML: `mkLogosQmlModule` produces a C++ Qt plugin that implements `LogosProviderPlugin` (the new API) or `PluginInterface` (legacy), and additionally bundles QML view files. The QML files are loaded by the host application (basecamp or standalone app), not by the plugin itself. The C++ plugin runs in a separate `ui-host` subprocess and communicates with the QML view via Qt Remote Objects over a private socket.
+
 ## The LGX package format
 
 LGX (Logos Package Format) is the archive format used to distribute both Logos Modules (core plugins) and UI Apps (Qt plugins). An `.lgx` file is a bundle containing platform-specific binaries and metadata.
